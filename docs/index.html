@@ -256,6 +256,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">indexers.VectorStore.from_filespace</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/indexers.dataclasses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">indexers.dataclasses</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -404,7 +410,7 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td><a href="../docs/indexers.html#classifai.indexers">indexers</a></td>
-<td>This module provides functionality for creating a vector index from a text file.</td>
+<td>This module provides functionality for creating a vector index from a CSV (text)</td>
 </tr>
 <tr class="even">
 <td><a href="../docs/indexers.main.html#classifai.indexers.main">indexers.main</a></td>
@@ -415,42 +421,46 @@ ul.task-list li input[type="checkbox"] {
 <td>A class to model and create ‘VectorStore’ objects for building and searching vector databases from CSV text files.</td>
 </tr>
 <tr class="even">
+<td><a href="../docs/indexers.dataclasses.html#classifai.indexers.dataclasses">indexers.dataclasses</a></td>
+<td></td>
+</tr>
+<tr class="odd">
 <td><a href="../docs/indexers.dataclasses.VectorStoreSearchInput.html#classifai.indexers.dataclasses.VectorStoreSearchInput">indexers.dataclasses.VectorStoreSearchInput</a></td>
-<td>TODO.</td>
+<td>DataFrame-like object for forming and validating search query input data.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="../docs/indexers.dataclasses.VectorStoreSearchOutput.html#classifai.indexers.dataclasses.VectorStoreSearchOutput">indexers.dataclasses.VectorStoreSearchOutput</a></td>
-<td>TODO.</td>
+<td>DataFrame-like object for storing and validating search results with rankings</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="../docs/indexers.dataclasses.VectorStoreReverseSearchInput.html#classifai.indexers.dataclasses.VectorStoreReverseSearchInput">indexers.dataclasses.VectorStoreReverseSearchInput</a></td>
-<td>TODO.</td>
+<td>DataFrame-like object for forming and validating reverse search query</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="../docs/indexers.dataclasses.VectorStoreReverseSearchOutput.html#classifai.indexers.dataclasses.VectorStoreReverseSearchOutput">indexers.dataclasses.VectorStoreReverseSearchOutput</a></td>
-<td>TODO.</td>
-</tr>
-<tr class="even">
-<td><a href="../docs/indexers.dataclasses.VectorStoreEmbedInput.html#classifai.indexers.dataclasses.VectorStoreEmbedInput">indexers.dataclasses.VectorStoreEmbedInput</a></td>
-<td>TODO.</td>
+<td>DataFrame-like object for storing reverse search results.</td>
 </tr>
 <tr class="odd">
-<td><a href="../docs/indexers.dataclasses.VectorStoreEmbedOutput.html#classifai.indexers.dataclasses.VectorStoreEmbedOutput">indexers.dataclasses.VectorStoreEmbedOutput</a></td>
-<td>TODO.</td>
+<td><a href="../docs/indexers.dataclasses.VectorStoreEmbedInput.html#classifai.indexers.dataclasses.VectorStoreEmbedInput">indexers.dataclasses.VectorStoreEmbedInput</a></td>
+<td>DataFrame-like object for forming and validating text data to be embedded.</td>
 </tr>
 <tr class="even">
+<td><a href="../docs/indexers.dataclasses.VectorStoreEmbedOutput.html#classifai.indexers.dataclasses.VectorStoreEmbedOutput">indexers.dataclasses.VectorStoreEmbedOutput</a></td>
+<td>DataFrame-like object for storing and validating embedded vectors and associated</td>
+</tr>
+<tr class="odd">
 <td><a href="../docs/indexers.VectorStore.embed.html#classifai.indexers.VectorStore.embed">indexers.VectorStore.embed</a></td>
 <td>Converts text into vector embeddings using the vectoriser and returns a VectorStoreEmbedOutput dataframe with columns ‘id’, ‘text’, and ‘embedding’.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="../docs/indexers.VectorStore.search.html#classifai.indexers.VectorStore.search">indexers.VectorStore.search</a></td>
 <td>Searches the vector store using queries from a VectorStoreSearchInput object and returns</td>
 </tr>
-<tr class="even">
-<td><a href="../docs/indexers.VectorStore.reverse_search.html#classifai.indexers.VectorStore.reverse_search">indexers.VectorStore.reverse_search</a></td>
-<td>Reverse searches the vector store using a VectorStoreReverseSearchInput object and returns</td>
-</tr>
 <tr class="odd">
+<td><a href="../docs/indexers.VectorStore.reverse_search.html#classifai.indexers.VectorStore.reverse_search">indexers.VectorStore.reverse_search</a></td>
+<td>Reverse searches the vector store using a VectorStoreReverseSearchInput object</td>
+</tr>
+<tr class="even">
 <td><a href="../docs/indexers.VectorStore.from_filespace.html#classifai.indexers.VectorStore.from_filespace">indexers.VectorStore.from_filespace</a></td>
 <td>Creates a <code>VectorStore</code> instance from stored metadata and Parquet files.</td>
 </tr>
@@ -464,7 +474,7 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td><a href="../docs/servers.html#classifai.servers">servers</a></td>
-<td>This module provides functionality for creating a start a restAPI service which</td>
+<td>This module provides functionality for creating or extending a REST-API service</td>
 </tr>
 <tr class="even">
 <td><a href="../docs/servers.main.html#classifai.servers.main">servers.main</a></td>

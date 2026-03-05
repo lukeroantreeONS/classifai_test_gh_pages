@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>indexers.dataclasses.vectorstoresearchinput – ClassifAI</title>
+<title>indexers.dataclasses – ClassifAI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../docs/servers.html" rel="next">
+<link href="../docs/indexers.VectorStore.from_filespace.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -147,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../docs/indexers.html">Indexers</a></li><li class="breadcrumb-item"><a href="../docs/indexers.dataclasses.html">indexers.dataclasses</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -247,13 +249,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Indexers</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../docs/indexers.html" class="sidebar-item-text sidebar-link">
@@ -292,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../docs/indexers.dataclasses.html" class="sidebar-item-text sidebar-link">
+  <a href="../docs/indexers.dataclasses.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">indexers.dataclasses</span></a>
   </div>
 </li>
@@ -384,31 +386,332 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#classifai.indexers.dataclasses.VectorStoreSearchInput" id="toc-classifai.indexers.dataclasses.VectorStoreSearchInput" class="nav-link active" data-scroll-target="#classifai.indexers.dataclasses.VectorStoreSearchInput">indexers.dataclasses.VectorStoreSearchInput</a>
+  <li><a href="#classifai.indexers.dataclasses" id="toc-classifai.indexers.dataclasses" class="nav-link active" data-scroll-target="#classifai.indexers.dataclasses">indexers.dataclasses</a>
   <ul class="collapse">
-  <li><a href="#attributes" id="toc-attributes" class="nav-link" data-scroll-target="#attributes">Attributes</a></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <li><a href="#classes" id="toc-classes" class="nav-link" data-scroll-target="#classes">Classes</a>
   <ul class="collapse">
-  <li><a href="#classifai.indexers.dataclasses.VectorStoreSearchInput.from_data" id="toc-classifai.indexers.dataclasses.VectorStoreSearchInput.from_data" class="nav-link" data-scroll-target="#classifai.indexers.dataclasses.VectorStoreSearchInput.from_data">from_data</a></li>
-  <li><a href="#classifai.indexers.dataclasses.VectorStoreSearchInput.validate" id="toc-classifai.indexers.dataclasses.VectorStoreSearchInput.validate" class="nav-link" data-scroll-target="#classifai.indexers.dataclasses.VectorStoreSearchInput.validate">validate</a></li>
+  <li><a href="#classifai.indexers.dataclasses.VectorStoreEmbedInput" id="toc-classifai.indexers.dataclasses.VectorStoreEmbedInput" class="nav-link" data-scroll-target="#classifai.indexers.dataclasses.VectorStoreEmbedInput">VectorStoreEmbedInput</a></li>
+  <li><a href="#classifai.indexers.dataclasses.VectorStoreEmbedOutput" id="toc-classifai.indexers.dataclasses.VectorStoreEmbedOutput" class="nav-link" data-scroll-target="#classifai.indexers.dataclasses.VectorStoreEmbedOutput">VectorStoreEmbedOutput</a></li>
+  <li><a href="#classifai.indexers.dataclasses.VectorStoreReverseSearchInput" id="toc-classifai.indexers.dataclasses.VectorStoreReverseSearchInput" class="nav-link" data-scroll-target="#classifai.indexers.dataclasses.VectorStoreReverseSearchInput">VectorStoreReverseSearchInput</a></li>
+  <li><a href="#classifai.indexers.dataclasses.VectorStoreReverseSearchOutput" id="toc-classifai.indexers.dataclasses.VectorStoreReverseSearchOutput" class="nav-link" data-scroll-target="#classifai.indexers.dataclasses.VectorStoreReverseSearchOutput">VectorStoreReverseSearchOutput</a></li>
+  <li><a href="#classifai.indexers.dataclasses.VectorStoreSearchInput" id="toc-classifai.indexers.dataclasses.VectorStoreSearchInput" class="nav-link" data-scroll-target="#classifai.indexers.dataclasses.VectorStoreSearchInput">VectorStoreSearchInput</a></li>
+  <li><a href="#classifai.indexers.dataclasses.VectorStoreSearchOutput" id="toc-classifai.indexers.dataclasses.VectorStoreSearchOutput" class="nav-link" data-scroll-target="#classifai.indexers.dataclasses.VectorStoreSearchOutput">VectorStoreSearchOutput</a></li>
   </ul></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../docs/indexers.html">Indexers</a></li><li class="breadcrumb-item"><a href="../docs/indexers.dataclasses.html">indexers.dataclasses</a></li></ol></nav></header>
 
 
 
 
-<section id="classifai.indexers.dataclasses.VectorStoreSearchInput" class="level1">
-<h1>indexers.dataclasses.VectorStoreSearchInput</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreSearchInput(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="classifai.indexers.dataclasses" class="level1">
+<h1>indexers.dataclasses</h1>
+<p><code>indexers.dataclasses</code></p>
+<section id="classes" class="level2">
+<h2 class="anchored" data-anchor-id="classes">Classes</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreEmbedInput">VectorStoreEmbedInput</a></td>
+<td>DataFrame-like object for forming and validating text data to be embedded.</td>
+</tr>
+<tr class="even">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreEmbedOutput">VectorStoreEmbedOutput</a></td>
+<td>DataFrame-like object for storing and validating embedded vectors and associated</td>
+</tr>
+<tr class="odd">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreReverseSearchInput">VectorStoreReverseSearchInput</a></td>
+<td>DataFrame-like object for forming and validating reverse search query</td>
+</tr>
+<tr class="even">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreReverseSearchOutput">VectorStoreReverseSearchOutput</a></td>
+<td>DataFrame-like object for storing reverse search results.</td>
+</tr>
+<tr class="odd">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreSearchInput">VectorStoreSearchInput</a></td>
+<td>DataFrame-like object for forming and validating search query input data.</td>
+</tr>
+<tr class="even">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreSearchOutput">VectorStoreSearchOutput</a></td>
+<td>DataFrame-like object for storing and validating search results with rankings</td>
+</tr>
+</tbody>
+</table>
+<section id="classifai.indexers.dataclasses.VectorStoreEmbedInput" class="level3">
+<h3 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreEmbedInput">VectorStoreEmbedInput</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreEmbedInput(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>DataFrame-like object for forming and validating text data to be embedded.</p>
+<p>This class validates and represents input texts that will be converted to vector embeddings by the vector store.</p>
+<section id="attributes" class="level4 doc-section doc-section-attributes">
+<h4 class="doc-section doc-section-attributes anchored" data-anchor-id="attributes">Attributes</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>pd.Series</td>
+<td>Unique identifier for each text item.</td>
+</tr>
+<tr class="even">
+<td>text</td>
+<td>pd.Series</td>
+<td>The text content to be embedded.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods" class="level4">
+<h4 class="anchored" data-anchor-id="methods">Methods</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreEmbedInput.from_data">from_data</a></td>
+<td>Create a validated VectorStoreEmbedInput from a dictionary or DataFrame.</td>
+</tr>
+<tr class="even">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreEmbedInput.validate">validate</a></td>
+<td>Validate an existing instance against the schema and return a VectorStoreEmbedInput.</td>
+</tr>
+</tbody>
+</table>
+<section id="classifai.indexers.dataclasses.VectorStoreEmbedInput.from_data" class="level5">
+<h5 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreEmbedInput.from_data">from_data</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreEmbedInput.from_data(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Create a validated VectorStoreEmbedInput from a dictionary or DataFrame.</p>
+</section>
+<section id="classifai.indexers.dataclasses.VectorStoreEmbedInput.validate" class="level5">
+<h5 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreEmbedInput.validate">validate</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreEmbedInput.validate(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Validate an existing instance against the schema and return a VectorStoreEmbedInput.</p>
+</section>
+</section>
+</section>
+<section id="classifai.indexers.dataclasses.VectorStoreEmbedOutput" class="level3">
+<h3 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreEmbedOutput">VectorStoreEmbedOutput</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreEmbedOutput(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>DataFrame-like object for storing and validating embedded vectors and associated metadata.</p>
+<p>This class represents the output of embedding operations, containing the original text data along with their computed vector embeddings.</p>
+<section id="attributes-1" class="level4 doc-section doc-section-attributes">
+<h4 class="doc-section doc-section-attributes anchored" data-anchor-id="attributes-1">Attributes</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>pd.Series</td>
+<td>Unique identifier for each embedded item.</td>
+</tr>
+<tr class="even">
+<td>text</td>
+<td>pd.Series</td>
+<td>The original text that was embedded.</td>
+</tr>
+<tr class="odd">
+<td>embedding</td>
+<td>pd.Series</td>
+<td>The computed vector embedding (numpy array).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods-1" class="level4">
+<h4 class="anchored" data-anchor-id="methods-1">Methods</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreEmbedOutput.from_data">from_data</a></td>
+<td>Create a validated VectorStoreEmbedOutput from a dictionary or DataFrame.</td>
+</tr>
+<tr class="even">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreEmbedOutput.validate">validate</a></td>
+<td>Validate an existing instance against the schema and return a VectorStoreEmbedOutput.</td>
+</tr>
+</tbody>
+</table>
+<section id="classifai.indexers.dataclasses.VectorStoreEmbedOutput.from_data" class="level5">
+<h5 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreEmbedOutput.from_data">from_data</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreEmbedOutput.from_data(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Create a validated VectorStoreEmbedOutput from a dictionary or DataFrame.</p>
+</section>
+<section id="classifai.indexers.dataclasses.VectorStoreEmbedOutput.validate" class="level5">
+<h5 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreEmbedOutput.validate">validate</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreEmbedOutput.validate(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Validate an existing instance against the schema and return a VectorStoreEmbedOutput.</p>
+</section>
+</section>
+</section>
+<section id="classifai.indexers.dataclasses.VectorStoreReverseSearchInput" class="level3">
+<h3 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreReverseSearchInput">VectorStoreReverseSearchInput</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreReverseSearchInput(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>DataFrame-like object for forming and validating reverse search query input data.</p>
+<p>This class validates and represents input for reverse searches, which find similar documents to a given document in the vector store.</p>
+<section id="attributes-2" class="level4 doc-section doc-section-attributes">
+<h4 class="doc-section doc-section-attributes anchored" data-anchor-id="attributes-2">Attributes</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>pd.Series</td>
+<td>Unique identifier for the reverse search query.</td>
+</tr>
+<tr class="even">
+<td>doc_id</td>
+<td>pd.Series</td>
+<td>The document ID to find similar documents for.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods-2" class="level4">
+<h4 class="anchored" data-anchor-id="methods-2">Methods</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreReverseSearchInput.from_data">from_data</a></td>
+<td>Create a validated VectorStoreReverseSearchInput from a dictionary or DataFrame.</td>
+</tr>
+<tr class="even">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreReverseSearchInput.validate">validate</a></td>
+<td>Validate an existing instance against the schema and return a VectorStoreReverseSearchInput.</td>
+</tr>
+</tbody>
+</table>
+<section id="classifai.indexers.dataclasses.VectorStoreReverseSearchInput.from_data" class="level5">
+<h5 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreReverseSearchInput.from_data">from_data</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreReverseSearchInput.from_data(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Create a validated VectorStoreReverseSearchInput from a dictionary or DataFrame.</p>
+</section>
+<section id="classifai.indexers.dataclasses.VectorStoreReverseSearchInput.validate" class="level5">
+<h5 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreReverseSearchInput.validate">validate</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreReverseSearchInput.validate(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Validate an existing instance against the schema and return a VectorStoreReverseSearchInput.</p>
+</section>
+</section>
+</section>
+<section id="classifai.indexers.dataclasses.VectorStoreReverseSearchOutput" class="level3">
+<h3 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreReverseSearchOutput">VectorStoreReverseSearchOutput</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreReverseSearchOutput(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>DataFrame-like object for storing reverse search results.</p>
+<p>This class represents the output of vector store reverse search operations, containing knowledgebase examples with the same label as in the query.</p>
+<section id="attributes-3" class="level4 doc-section doc-section-attributes">
+<h4 class="doc-section doc-section-attributes anchored" data-anchor-id="attributes-3">Attributes</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>query_id</td>
+<td>pd.Series</td>
+<td>Identifier for the input label for lookup in the knowledgebase.</td>
+</tr>
+<tr class="even">
+<td>doc_id</td>
+<td>pd.Series</td>
+<td>Identifier for the knowledgebase example retrieved.</td>
+</tr>
+<tr class="odd">
+<td>doc_text</td>
+<td>pd.Series</td>
+<td>The text content of the retrieved example.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods-3" class="level4">
+<h4 class="anchored" data-anchor-id="methods-3">Methods</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreReverseSearchOutput.from_data">from_data</a></td>
+<td>Create a validated VectorStoreReverseSearchOutput from a dictionary or DataFrame.</td>
+</tr>
+<tr class="even">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreReverseSearchOutput.validate">validate</a></td>
+<td>Validate an existing instance against the schema and return a VectorStoreReverseSearchOutputs.</td>
+</tr>
+</tbody>
+</table>
+<section id="classifai.indexers.dataclasses.VectorStoreReverseSearchOutput.from_data" class="level5">
+<h5 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreReverseSearchOutput.from_data">from_data</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreReverseSearchOutput.from_data(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Create a validated VectorStoreReverseSearchOutput from a dictionary or DataFrame.</p>
+</section>
+<section id="classifai.indexers.dataclasses.VectorStoreReverseSearchOutput.validate" class="level5">
+<h5 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreReverseSearchOutput.validate">validate</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreReverseSearchOutput.validate(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Validate an existing instance against the schema and return a VectorStoreReverseSearchOutputs.</p>
+</section>
+</section>
+</section>
+<section id="classifai.indexers.dataclasses.VectorStoreSearchInput" class="level3">
+<h3 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreSearchInput">VectorStoreSearchInput</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreSearchInput(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>DataFrame-like object for forming and validating search query input data.</p>
 <p>This class validates and represents input queries for vector store searches. Each row contains a unique query identifier and the associated query text.</p>
-<section id="attributes" class="level2 doc-section doc-section-attributes">
-<h2 class="doc-section doc-section-attributes anchored" data-anchor-id="attributes">Attributes</h2>
+<section id="attributes-4" class="level4 doc-section doc-section-attributes">
+<h4 class="doc-section doc-section-attributes anchored" data-anchor-id="attributes-4">Attributes</h4>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -431,8 +734,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="methods" class="level2">
-<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<section id="methods-4" class="level4">
+<h4 class="anchored" data-anchor-id="methods-4">Methods</h4>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -451,17 +754,105 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<section id="classifai.indexers.dataclasses.VectorStoreSearchInput.from_data" class="level3">
-<h3 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreSearchInput.from_data">from_data</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreSearchInput.from_data(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="classifai.indexers.dataclasses.VectorStoreSearchInput.from_data" class="level5">
+<h5 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreSearchInput.from_data">from_data</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreSearchInput.from_data(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Create a validated VectorStoreSearchInput from a dictionary or DataFrame.</p>
 </section>
-<section id="classifai.indexers.dataclasses.VectorStoreSearchInput.validate" class="level3">
-<h3 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreSearchInput.validate">validate</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreSearchInput.validate(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="classifai.indexers.dataclasses.VectorStoreSearchInput.validate" class="level5">
+<h5 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreSearchInput.validate">validate</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreSearchInput.validate(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Validate an existing DataFrame against the schema and return a VectorStoreSearchInput.</p>
+</section>
+</section>
+</section>
+<section id="classifai.indexers.dataclasses.VectorStoreSearchOutput" class="level3">
+<h3 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreSearchOutput">VectorStoreSearchOutput</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreSearchOutput(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>DataFrame-like object for storing and validating search results with rankings and similarity scores.</p>
+<p>This class represents the output of vector store search operations, containing query information, matched documents, scores, and similarity rankings.</p>
+<section id="attributes-5" class="level4 doc-section doc-section-attributes">
+<h4 class="doc-section doc-section-attributes anchored" data-anchor-id="attributes-5">Attributes</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>query_id</td>
+<td>pd.Series</td>
+<td>Identifier for the source query.</td>
+</tr>
+<tr class="even">
+<td>query_text</td>
+<td>pd.Series</td>
+<td>The original query text.</td>
+</tr>
+<tr class="odd">
+<td>doc_id</td>
+<td>pd.Series</td>
+<td>Identifier for the retrieved document.</td>
+</tr>
+<tr class="even">
+<td>doc_text</td>
+<td>pd.Series</td>
+<td>The text content of the retrieved document.</td>
+</tr>
+<tr class="odd">
+<td>rank</td>
+<td>pd.Series</td>
+<td>The ranking position of the result (0-indexed, non-negative).</td>
+</tr>
+<tr class="even">
+<td>score</td>
+<td>pd.Series</td>
+<td>The similarity score or relevance metric.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods-5" class="level4">
+<h4 class="anchored" data-anchor-id="methods-5">Methods</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreSearchOutput.from_data">from_data</a></td>
+<td>Create a validated VectorStoreSearchOutput from a dictionary or DataFrame.</td>
+</tr>
+<tr class="even">
+<td><a href="#classifai.indexers.dataclasses.VectorStoreSearchOutput.validate">validate</a></td>
+<td>Validate an existing instance against the schema and return a VectorStoreSearchOutput.</td>
+</tr>
+</tbody>
+</table>
+<section id="classifai.indexers.dataclasses.VectorStoreSearchOutput.from_data" class="level5">
+<h5 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreSearchOutput.from_data">from_data</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreSearchOutput.from_data(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Create a validated VectorStoreSearchOutput from a dictionary or DataFrame.</p>
+</section>
+<section id="classifai.indexers.dataclasses.VectorStoreSearchOutput.validate" class="level5">
+<h5 class="anchored" data-anchor-id="classifai.indexers.dataclasses.VectorStoreSearchOutput.validate">validate</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreSearchOutput.validate(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Validate an existing instance against the schema and return a VectorStoreSearchOutput.</p>
 
 
+</section>
+</section>
 </section>
 </section>
 </section>
@@ -867,6 +1258,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../docs/indexers.VectorStore.from_filespace.html" class="pagination-link" aria-label="indexers.VectorStore.from_filespace">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">indexers.VectorStore.from_filespace</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../docs/servers.html" class="pagination-link" aria-label="servers">
+        <span class="nav-page-text">servers</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

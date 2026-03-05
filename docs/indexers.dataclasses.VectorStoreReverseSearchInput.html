@@ -290,6 +290,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">indexers.VectorStore.from_filespace</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/indexers.dataclasses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">indexers.dataclasses</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -380,6 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#classifai.indexers.dataclasses.VectorStoreReverseSearchInput" id="toc-classifai.indexers.dataclasses.VectorStoreReverseSearchInput" class="nav-link active" data-scroll-target="#classifai.indexers.dataclasses.VectorStoreReverseSearchInput">indexers.dataclasses.VectorStoreReverseSearchInput</a>
   <ul class="collapse">
+  <li><a href="#attributes" id="toc-attributes" class="nav-link" data-scroll-target="#attributes">Attributes</a></li>
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
   <ul class="collapse">
   <li><a href="#classifai.indexers.dataclasses.VectorStoreReverseSearchInput.from_data" id="toc-classifai.indexers.dataclasses.VectorStoreReverseSearchInput.from_data" class="nav-link" data-scroll-target="#classifai.indexers.dataclasses.VectorStoreReverseSearchInput.from_data">from_data</a></li>
@@ -398,7 +405,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="classifai.indexers.dataclasses.VectorStoreReverseSearchInput" class="level1">
 <h1>indexers.dataclasses.VectorStoreReverseSearchInput</h1>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>indexers.dataclasses.VectorStoreReverseSearchInput(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>TODO.</p>
+<p>DataFrame-like object for forming and validating reverse search query input data.</p>
+<p>This class validates and represents input for reverse searches, which find similar documents to a given document in the vector store.</p>
+<section id="attributes" class="level2 doc-section doc-section-attributes">
+<h2 class="doc-section doc-section-attributes anchored" data-anchor-id="attributes">Attributes</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>pd.Series</td>
+<td>Unique identifier for the reverse search query.</td>
+</tr>
+<tr class="even">
+<td>doc_id</td>
+<td>pd.Series</td>
+<td>The document ID to find similar documents for.</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="methods" class="level2">
 <h2 class="anchored" data-anchor-id="methods">Methods</h2>
 <table class="caption-top table">

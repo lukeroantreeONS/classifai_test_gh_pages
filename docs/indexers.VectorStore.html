@@ -292,6 +292,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">indexers.VectorStore.from_filespace</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/indexers.dataclasses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">indexers.dataclasses</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -507,7 +513,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td><a href="#classifai.indexers.VectorStore.reverse_search">reverse_search</a></td>
-<td>Reverse searches the vector store using a VectorStoreReverseSearchInput object and returns</td>
+<td>Reverse searches the vector store using a VectorStoreReverseSearchInput object</td>
 </tr>
 <tr class="even">
 <td><a href="#classifai.indexers.VectorStore.search">search</a></td>
@@ -613,10 +619,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-1">Parameters</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 6%">
-<col style="width: 73%">
 <col style="width: 9%">
+<col style="width: 5%">
+<col style="width: 75%">
+<col style="width: 8%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -642,7 +648,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>hooks</td>
 <td>dict</td>
-<td>A dictionary of user-defined hooks for preprocessing and postprocessing. Defaults to None.</td>
+<td>[optional] A dictionary of user-defined hooks for preprocessing and postprocessing. Defaults to None.</td>
 <td><code>None</code></td>
 </tr>
 </tbody>
@@ -704,16 +710,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="classifai.indexers.VectorStore.reverse_search" class="level3">
 <h3 class="anchored" data-anchor-id="classifai.indexers.VectorStore.reverse_search">reverse_search</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>indexers.VectorStore.reverse_search(query, n_results<span class="op">=</span><span class="dv">100</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Reverse searches the vector store using a VectorStoreReverseSearchInput object and returns matched results in VectorStoreReverseSearchOutput object. In batches, converts users text queries into vector embeddings, computes cosine similarity with stored document vectors, and retrieves the top results.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>indexers.VectorStore.reverse_search(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    query,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    max_n_results<span class="op">=</span><span class="dv">100</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    partial_match<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Reverse searches the vector store using a VectorStoreReverseSearchInput object and returns matched results in VectorStoreReverseSearchOutput object. If using partial matching, matches if document label starts with query label.</p>
 <section id="parameters-2" class="level4 doc-section doc-section-parameters">
 <h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-2">Parameters</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 6%">
-<col style="width: 19%">
-<col style="width: 66%">
 <col style="width: 7%">
+<col style="width: 16%">
+<col style="width: 69%">
+<col style="width: 6%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -731,10 +741,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td>n_results</td>
+<td>max_n_results</td>
 <td>int</td>
-<td>Number of top results to return for each query. Default 100.</td>
+<td>[optional] Number of top results to return for each query, set to -1 to return all results. Default 100.</td>
 <td><code>100</code></td>
+</tr>
+<tr class="odd">
+<td>partial_match</td>
+<td>bool</td>
+<td>[optional] Set the search behaviour to use <code>join_where</code> to match query checks that document id <code>startsWith</code> query. Default False</td>
+<td><code>False</code></td>
 </tr>
 </tbody>
 </table>
@@ -744,8 +760,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table">
 <colgroup>
 <col style="width: 4%">
-<col style="width: 13%">
-<col style="width: 81%">
+<col style="width: 14%">
+<col style="width: 80%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -829,13 +845,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="even">
 <td>n_results</td>
 <td>int</td>
-<td>Number of top results to return for each query. Default 10.</td>
+<td>[optional] Number of top results to return for each query. Default 10.</td>
 <td><code>10</code></td>
 </tr>
 <tr class="odd">
 <td>batch_size</td>
 <td>int</td>
-<td>The batch size for processing queries. Default 8.</td>
+<td>[optional] The batch size for processing queries. Default 8.</td>
 <td><code>8</code></td>
 </tr>
 </tbody>
@@ -845,7 +861,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="doc-section doc-section-returns anchored" data-anchor-id="returns-3">Returns</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 4%">
+<col style="width: 5%">
 <col style="width: 11%">
 <col style="width: 83%">
 </colgroup>
