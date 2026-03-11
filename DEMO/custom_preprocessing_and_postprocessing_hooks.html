@@ -66,6 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../DEMO/custom_vectoriser.html" rel="prev">
+<link href="../ons_favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -352,13 +353,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/README.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Demo for <code>classifai</code></span></a>
+ <span class="menu-text">Overview of Demonstrations &amp; Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/general_workflow_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">✨ ClassifAI Demo ✨</span></a>
+ <span class="menu-text">✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -391,7 +392,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#example-hook-implementations" id="toc-example-hook-implementations" class="nav-link" data-scroll-target="#example-hook-implementations">Example Hook implementations</a>
   <ul class="collapse">
   <li><a href="#pre-requisite" id="toc-pre-requisite" class="nav-link" data-scroll-target="#pre-requisite">Pre-requisite</a></li>
-  <li><a href="#installation-pre-release" id="toc-installation-pre-release" class="nav-link" data-scroll-target="#installation-pre-release">Installation (pre-release)</a></li>
   <li><a href="#demo-data" id="toc-demo-data" class="nav-link" data-scroll-target="#demo-data">Demo Data</a></li>
   <li><a href="#normal-vectorstore-setup" id="toc-normal-vectorstore-setup" class="nav-link" data-scroll-target="#normal-vectorstore-setup">Normal vectorstore setup</a></li>
   <li><a href="#making-pre--and-post--processing-hooks" id="toc-making-pre--and-post--processing-hooks" class="nav-link" data-scroll-target="#making-pre--and-post--processing-hooks">Making pre- and post- processing hooks</a></li>
@@ -477,7 +477,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>This shows that the <code>VectorStore.search()</code> method expects: - An <strong>input dataclass object</strong> with columns <code>[id, query]</code>. - To output an <strong>output dataclass object</strong> with columns <code>[query_id, query_text, doc_id, doc_text, rank, score]</code>.</p>
 <p>The use of these dataclasses both helps the user of the package to understand what data needs to be provided to the Vectorstore and how a user should interact with the objects being returned by these VectorStore functions. Additionally, this ensures robustness of the package by checking that the correct columns are present in the data before operating on it.</p>
-<p>The reverse_search() and embed() VectorStore functions have their own input and output data classes with their own validity column data checks. The names of each set are intuitively: | <strong>VectorStore Method</strong> | <strong>Input Dataclass</strong> | <strong>Output Dataclass</strong> | |——————————-|—————————–|—————————–| | <code>VectorStore.search()</code> | <code>VectorStoreSearchInput</code> | <code>VectorStoreSearchOutput</code> | | <code>VectorStore.reverse_search()</code> | <code>VectorStoreReverseSearchInput</code> | <code>VectorStoreReverseSearchOutput</code> | | <code>VectorStore.embed()</code> | <code>VectorStoreEmbedInput</code> | <code>VectorStoreEmbedOutput</code> |</p>
+<p>The reverse_search() and embed() VectorStore functions have their own input and output data classes with their own validity column data checks. The names of each set are intuitively:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 32%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>VectorStore Method</strong></th>
+<th><strong>Input Dataclass</strong></th>
+<th><strong>Output Dataclass</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>VectorStore.search()</code></td>
+<td><code>VectorStoreSearchInput</code></td>
+<td><code>VectorStoreSearchOutput</code></td>
+</tr>
+<tr class="even">
+<td><code>VectorStore.reverse_search()</code></td>
+<td><code>VectorStoreReverseSearchInput</code></td>
+<td><code>VectorStoreReverseSearchOutput</code></td>
+</tr>
+<tr class="odd">
+<td><code>VectorStore.embed()</code></td>
+<td><code>VectorStoreEmbedInput</code></td>
+<td><code>VectorStoreEmbedOutput</code></td>
+</tr>
+</tbody>
+</table>
 <p>Users of the package can use the schema of each of these input and output dataclasses to understand how to interface with these main methods of the VectorStore class.</p>
 </section>
 </section>
@@ -516,81 +547,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If you are new to the package, its recommended to follow through the <code>general_workflow.ipynb</code> notebook tutorial first. That interactive DEMO will showcase the core features of the <code>ClassifAI package</code>. This current notebook provides examples of how to modify the flow of data which is initially described in the general_workflow.ipynb notebook.</p>
 <p>Check out the ClassifAI repository DEMO folder for all our notebook walkthrough tutorials including those mentioned above:</p>
 <p>https://github.com/datasciencecampus/classifai/tree/main/DEMO</p>
-</section>
-<section id="installation-pre-release" class="level3">
-<h3 class="anchored" data-anchor-id="installation-pre-release">Installation (pre-release)</h3>
-<p><code>Classifai</code> is currently in <strong>pre-release</strong> and is <strong>not yet published on PyPI</strong>.<br>
-This section describes how to install the packaged <strong>wheel</strong> from the project’s public GitHub Releases so that you can follow through this DEMO and try the code yourself.</p>
-<section id="create-and-activate-a-virtual-environment-in-command-line" class="level4">
-<h4 class="anchored" data-anchor-id="create-and-activate-a-virtual-environment-in-command-line">1) Create and activate a virtual environment in command line</h4>
-<section id="using-pip-venv" class="level5">
-<h5 class="anchored" data-anchor-id="using-pip-venv">Using <code>pip</code> + <code>venv</code></h5>
-<p>Create a virtual environment:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="using-uv" class="level5">
-<h5 class="anchored" data-anchor-id="using-uv">Using <code>UV</code></h5>
-<p>Create a virtual environment:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> venv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Activate the created environment with</p>
-<p>(macOS / Linux):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Activate it (Windows):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/Scripts/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
-</section>
-</section>
-<section id="install-the-pre-release-wheel" class="level4">
-<h4 class="anchored" data-anchor-id="install-the-pre-release-wheel">2) Install the pre-release wheel</h4>
-<section id="using-pip" class="level5">
-<h5 class="anchored" data-anchor-id="using-pip">Using <code>pip</code></h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">"https://github.com/datasciencecampus/classifai/releases/download/v0.2.1/classifai-0.2.1-py3-none-any.whl"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="using-uv-1" class="level5">
-<h5 class="anchored" data-anchor-id="using-uv-1">Using <code>uv</code></h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> pip install <span class="st">"https://github.com/datasciencecampus/classifai/releases/download/v0.2.1/classifai-0.2.1-py3-none-any.whl"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-</section>
-<section id="install-optional-dependencies-huggingface" class="level4">
-<h4 class="anchored" data-anchor-id="install-optional-dependencies-huggingface">3) Install optional dependencies (<code>[huggingface]</code>)</h4>
-<p>Finally, for this demo we will be using the Huggingface Library to download embedding models - we therefore need an optional dependency of the Classifai Pacakge:</p>
-<section id="using-pip-1" class="level5">
-<h5 class="anchored" data-anchor-id="using-pip-1">Using <code>pip</code></h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">"classifai[huggingface]"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="using-uv-pip" class="level5">
-<h5 class="anchored" data-anchor-id="using-uv-pip">Using <code>uv pip</code></h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> pip install <span class="st">"classifai[huggingface]"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="cell-9" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming the step one virtual environemnt is set up and actiavted and ready in the terminal, run the following commands to install the classifai package and the huggingface dependencies.</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">## PIP</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#!pip install "https://github.com/datasciencecampus/classifai/releases/download/v0.2.1/classifai-0.2.1-py3-none-any.whl"</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#!pip install "classifai[huggingface]"</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">## UV</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#!uv pip install "https://github.com/datasciencecampus/classifai/releases/download/v0.2.1/classifai-0.2.1-py3-none-any.whl"</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#!uv pip install "classifai[huggingface]"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="note" class="level5">
-<h5 class="anchored" data-anchor-id="note">Note! :</h5>
-<p>You may need to install the ipykernel python package to run Notebook cells with your Python environment</p>
-<div id="cell-11" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!pip install ipykernel</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#!uv pip install ipykernel</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<hr>
-</section>
-</section>
 <section id="if-you-can-run-the-following-cell-in-this-notebook-you-should-be-good-to-go" class="level4">
 <h4 class="anchored" data-anchor-id="if-you-can-run-the-following-cell-in-this-notebook-you-should-be-good-to-go">If you can run the following cell in this notebook, you should be good to go!</h4>
-<div id="cell-13" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> classifai.vectorisers <span class="im">import</span> HuggingFaceVectoriser</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"done!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-9" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> classifai.vectorisers <span class="im">import</span> HuggingFaceVectoriser</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"done!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="alternatively-to-test-without-running-a-notebook-run-the-following-from-your-command-line" class="level4">
+<h4 class="anchored" data-anchor-id="alternatively-to-test-without-running-a-notebook-run-the-following-from-your-command-line">Alternatively, to test without running a notebook, run the following from your command line;</h4>
+<pre class="shell"><code>python -c "import classifai"</code></pre>
 </section>
 </section>
 <section id="demo-data" class="level3">
@@ -600,62 +568,62 @@ This section describes how to install the packaged <strong>wheel</strong> from t
 <section id="normal-vectorstore-setup" class="level3">
 <h3 class="anchored" data-anchor-id="normal-vectorstore-setup">Normal vectorstore setup</h3>
 <p>We can start by loading a normal vectorstore up with no additional preprocessing/hooks. We can use one of our fake example known datasets is known to have several rows of data with the same ID value. (You can get this from the github repo at the folder location specified in the code)</p>
-<div id="cell-16" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> classifai.indexers <span class="im">import</span> VectorStore</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>vectoriser <span class="op">=</span> HuggingFaceVectoriser(model_name<span class="op">=</span><span class="st">"sentence-transformers/all-MiniLM-L6-v2"</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>my_vector_store <span class="op">=</span> VectorStore(</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    file_name<span class="op">=</span><span class="st">"data/fake_soc_dataset.csv"</span>,</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    data_type<span class="op">=</span><span class="st">"csv"</span>,</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    vectoriser<span class="op">=</span>vectoriser,</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    overwrite<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-13" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> classifai.indexers <span class="im">import</span> VectorStore</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>vectoriser <span class="op">=</span> HuggingFaceVectoriser(model_name<span class="op">=</span><span class="st">"sentence-transformers/all-MiniLM-L6-v2"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>my_vector_store <span class="op">=</span> VectorStore(</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    file_name<span class="op">=</span><span class="st">"data/fake_soc_dataset.csv"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    data_type<span class="op">=</span><span class="st">"csv"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    vectoriser<span class="op">=</span>vectoriser,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    overwrite<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The below code uses our dataclasses to set up some data to pass to the VectorStore search method, notice that: * an exclaimation mark in the query (that in some cases we may want to sanitise) is shown in the results. * Also the results for the below query should also show several rows with the same <code>'doc_id'</code> value (because our example data file had multiple entries with the same id label)</p>
-<div id="cell-18" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> classifai.indexers.dataclasses <span class="im">import</span> VectorStoreSearchInput</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>input_data <span class="op">=</span> VectorStoreSearchInput({<span class="st">"id"</span>: [<span class="dv">1</span>], <span class="st">"query"</span>: [<span class="st">"a fruit and vegetable farmer!!!"</span>]})</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>my_vector_store.search(input_data, n_results<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-15" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> classifai.indexers.dataclasses <span class="im">import</span> VectorStoreSearchInput</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>input_data <span class="op">=</span> VectorStoreSearchInput({<span class="st">"id"</span>: [<span class="dv">1</span>], <span class="st">"query"</span>: [<span class="st">"a fruit and vegetable farmer!!!"</span>]})</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>my_vector_store.search(input_data, n_results<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="making-pre--and-post--processing-hooks" class="level3">
 <h3 class="anchored" data-anchor-id="making-pre--and-post--processing-hooks">Making pre- and post- processing hooks</h3>
 <p>So lets write some functions that will remove punctuation on the user’s input query, before the main logic of the Vectorstore.search() method begins, and remove rows with duplicate IDs from the results dataframe just before the results are retutned from the Vectorstore.search() method</p>
-<div id="cell-20" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>input_data <span class="op">=</span> VectorStoreSearchInput({<span class="st">"id"</span>: [<span class="dv">1</span>], <span class="st">"query"</span>: [<span class="st">"a fruit and vegetable farmer!!!"</span>]})</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>input_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-17" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>input_data <span class="op">=</span> VectorStoreSearchInput({<span class="st">"id"</span>: [<span class="dv">1</span>], <span class="st">"query"</span>: [<span class="st">"a fruit and vegetable farmer!!!"</span>]})</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>input_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-21" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> classifai.indexers.dataclasses <span class="im">import</span> VectorStoreSearchOutput</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> remove_punctuation(input_data: VectorStoreSearchInput) <span class="op">-&gt;</span> VectorStoreSearchInput:</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># we want to modify the 'texts' field in the input_data pydantic model, which is a list of texts</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># this line removes punctuation from each string with list comprehension</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    sanitized_texts <span class="op">=</span> [x.translate(<span class="bu">str</span>.maketrans(<span class="st">""</span>, <span class="st">""</span>, string.punctuation)) <span class="cf">for</span> x <span class="kw">in</span> input_data[<span class="st">"query"</span>]]</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    input_data[<span class="st">"query"</span>] <span class="op">=</span> sanitized_texts</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return the dictionary of input data with desired modified values at each desired key</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> input_data</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> drop_duplicates(input_data: VectorStoreSearchOutput) <span class="op">-&gt;</span> VectorStoreSearchOutput:</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># we want to depuplicate the ranking attribute of the pydantic model which is a pandas dataframe</span></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># specifically we want to drop all but the first occurrence of each unique 'doc_id' value for each subset of query results</span></span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    input_data <span class="op">=</span> input_data.drop_duplicates(subset<span class="op">=</span>[<span class="st">"query_id"</span>, <span class="st">"doc_id"</span>], keep<span class="op">=</span><span class="st">"first"</span>)</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># BE CAREFUL: drop_duplicates returns an object of type DataFrame, not VectorStoreSearchOutput so we need to convert back  to that type after this operation</span></span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    input_data <span class="op">=</span> VectorStoreSearchOutput(input_data)</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> input_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-18" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> classifai.indexers.dataclasses <span class="im">import</span> VectorStoreSearchOutput</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> remove_punctuation(input_data: VectorStoreSearchInput) <span class="op">-&gt;</span> VectorStoreSearchInput:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># we want to modify the 'texts' field in the input_data pydantic model, which is a list of texts</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># this line removes punctuation from each string with list comprehension</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    sanitized_texts <span class="op">=</span> [x.translate(<span class="bu">str</span>.maketrans(<span class="st">""</span>, <span class="st">""</span>, string.punctuation)) <span class="cf">for</span> x <span class="kw">in</span> input_data[<span class="st">"query"</span>]]</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    input_data[<span class="st">"query"</span>] <span class="op">=</span> sanitized_texts</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return the dictionary of input data with desired modified values at each desired key</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> input_data</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> drop_duplicates(input_data: VectorStoreSearchOutput) <span class="op">-&gt;</span> VectorStoreSearchOutput:</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># we want to depuplicate the ranking attribute of the pydantic model which is a pandas dataframe</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># specifically we want to drop all but the first occurrence of each unique 'doc_id' value for each subset of query results</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    input_data <span class="op">=</span> input_data.drop_duplicates(subset<span class="op">=</span>[<span class="st">"query_id"</span>, <span class="st">"doc_id"</span>], keep<span class="op">=</span><span class="st">"first"</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># BE CAREFUL: drop_duplicates returns an object of type DataFrame, not VectorStoreSearchOutput so we need to convert back  to that type after this operation</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    input_data <span class="op">=</span> VectorStoreSearchOutput(input_data)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> input_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="adding-our-hooks-to-the-vectorstore" class="level3">
@@ -678,25 +646,25 @@ This section describes how to install the packaged <strong>wheel</strong> from t
 </section>
 <section id="section" class="level1">
 <h1></h1>
-<div id="cell-24" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks <span class="op">=</span> VectorStore(</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    file_name<span class="op">=</span><span class="st">"data/fake_soc_dataset.csv"</span>,</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    data_type<span class="op">=</span><span class="st">"csv"</span>,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    vectoriser<span class="op">=</span>vectoriser,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    overwrite<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    hooks<span class="op">=</span>{</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"search_preprocess"</span>: remove_punctuation,</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"search_postprocess"</span>: drop_duplicates,</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    },</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-21" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks <span class="op">=</span> VectorStore(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    file_name<span class="op">=</span><span class="st">"data/fake_soc_dataset.csv"</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    data_type<span class="op">=</span><span class="st">"csv"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    vectoriser<span class="op">=</span>vectoriser,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    overwrite<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    hooks<span class="op">=</span>{</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"search_preprocess"</span>: remove_punctuation,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"search_postprocess"</span>: drop_duplicates,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="our-hooks-will-run-with-the-vectorstore-search-method" class="level3">
 <h3 class="anchored" data-anchor-id="our-hooks-will-run-with-the-vectorstore-search-method">Our hooks will run with the VectorStore search method</h3>
 <p>Now we’ve passed our desired additional functions to our VectorStore initialisation and those hook should run accordingly - lets see:</p>
-<div id="cell-26" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>input_data <span class="op">=</span> VectorStoreSearchInput({<span class="st">"id"</span>: [<span class="dv">1</span>], <span class="st">"query"</span>: [<span class="st">"a fruit and vegetable farmer!!!"</span>]})</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks.search(input_data, n_results<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-23" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>input_data <span class="op">=</span> VectorStoreSearchInput({<span class="st">"id"</span>: [<span class="dv">1</span>], <span class="st">"query"</span>: [<span class="st">"a fruit and vegetable farmer!!!"</span>]})</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks.search(input_data, n_results<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="oops" class="level4">
 <h4 class="anchored" data-anchor-id="oops">Oops!</h4>
@@ -705,43 +673,43 @@ This section describes how to install the packaged <strong>wheel</strong> from t
 <p>lets redo that now in a new function and hook it up to our preprocessing hook.</p>
 <section id="notice-how-this-time-we-changed-the-name-of-our-paramter-in-our-custom-hook-functions-thats-because-it-doesnt-matter-what-the-name-of-the-parameter-is-we-just-need-to-understand-that-it-will-take-in-one-argument---the-pydantic-object-associated-with-the-method." class="level5">
 <h5 class="anchored" data-anchor-id="notice-how-this-time-we-changed-the-name-of-our-paramter-in-our-custom-hook-functions-thats-because-it-doesnt-matter-what-the-name-of-the-parameter-is-we-just-need-to-understand-that-it-will-take-in-one-argument---the-pydantic-object-associated-with-the-method.">Notice how this time, we changed the name of our paramter in our custom hook functions, thats because it doesn’t matter what the name of the parameter is, we just need to understand that it will take in one argument - the pydantic object associated with the method.</h5>
-<div id="cell-28" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> drop_duplicates_and_reset_rank(input_object: VectorStoreSearchOutput) <span class="op">-&gt;</span> VectorStoreSearchOutput:</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove duplicates based on 'query_id' and 'doc_id'</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    input_object <span class="op">=</span> input_object.drop_duplicates(subset<span class="op">=</span>[<span class="st">"query_id"</span>, <span class="st">"doc_id"</span>], keep<span class="op">=</span><span class="st">"first"</span>)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reset the rank column per query_id using .loc to avoid SettingWithCopyWarning</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    input_object.loc[:, <span class="st">"rank"</span>] <span class="op">=</span> input_object.groupby(<span class="st">"query_id"</span>).cumcount()</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convert the DataFrame back to the pydantic validated object</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    input_object <span class="op">=</span> VectorStoreSearchOutput(input_object)</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> input_object</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-25" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> drop_duplicates_and_reset_rank(input_object: VectorStoreSearchOutput) <span class="op">-&gt;</span> VectorStoreSearchOutput:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove duplicates based on 'query_id' and 'doc_id'</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    input_object <span class="op">=</span> input_object.drop_duplicates(subset<span class="op">=</span>[<span class="st">"query_id"</span>, <span class="st">"doc_id"</span>], keep<span class="op">=</span><span class="st">"first"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reset the rank column per query_id using .loc to avoid SettingWithCopyWarning</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    input_object.loc[:, <span class="st">"rank"</span>] <span class="op">=</span> input_object.groupby(<span class="st">"query_id"</span>).cumcount()</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convert the DataFrame back to the pydantic validated object</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    input_object <span class="op">=</span> VectorStoreSearchOutput(input_object)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> input_object</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>From the cell below, you can see another way to set hooks - by directly accessing the hooks attribute of a running vectorstore:</p>
-<div id="cell-30" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># and lets access the hooks directly from the vector store instance to modify them</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks.hooks[<span class="st">"search_postprocess"</span>] <span class="op">=</span> drop_duplicates_and_reset_rank</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-27" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># and lets access the hooks directly from the vector store instance to modify them</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks.hooks[<span class="st">"search_postprocess"</span>] <span class="op">=</span> drop_duplicates_and_reset_rank</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
 <section id="done---now-lets-run-that-query-again" class="level4">
 <h4 class="anchored" data-anchor-id="done---now-lets-run-that-query-again">done - now lets run that query again</h4>
-<div id="cell-32" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks.search(input_data, n_results<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-29" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks.search(input_data, n_results<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="this-of-course-still-works-well-when-you-pass-multiple-queries-as-we-wrote-it-to-separate-on-query_id-column" class="level4">
 <h4 class="anchored" data-anchor-id="this-of-course-still-works-well-when-you-pass-multiple-queries-as-we-wrote-it-to-separate-on-query_id-column">This of course still works well when you pass multiple queries as we wrote it to separate on query_id column:</h4>
-<div id="cell-34" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>multi_input_data <span class="op">=</span> VectorStoreSearchInput(</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    {</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"id"</span>: [<span class="dv">1</span>, <span class="dv">2</span>],</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"query"</span>: [<span class="st">"a fruit and vegetable farmer!!!"</span>, <span class="st">"Digital marketing@"</span>],</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks.search(multi_input_data, n_results<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-31" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>multi_input_data <span class="op">=</span> VectorStoreSearchInput(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"id"</span>: [<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"query"</span>: [<span class="st">"a fruit and vegetable farmer!!!"</span>, <span class="st">"Digital marketing@"</span>],</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks.search(multi_input_data, n_results<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -752,22 +720,22 @@ This section describes how to install the packaged <strong>wheel</strong> from t
 <p>Use the VectorStore.from_filespace() class method to load the VectorStore back into memory.</p>
 <p><b>Important:</b> any hooks you applied in previous sessions are not saved to the filespace (it can be difficult to serialise functions). The from_filespace() class method has a hook parameter, similar to the VectorStore constructor we saw earlier. When loading from filespace in this way, you must reaplly the hook functions using this parameter or by setting the attribute after loading, as seen above.</p>
 <p>The following code cells show an example of loading the VectorStore, that was saved to filespace in this demo, back into memory and reapply the hooks on instantiation.</p>
-<div id="cell-36" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># you can see we've reused the vectoriser and hooks from before</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>reloaded_vector_store <span class="op">=</span> VectorStore.from_filespace(</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    folder_path<span class="op">=</span><span class="st">"./fake_soc_dataset/"</span>,  <span class="co"># YOU MAY NEED TO CHANGE THIS LINE TO THE CORRECT PATH</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    vectoriser<span class="op">=</span>vectoriser,</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    hooks<span class="op">=</span>{</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"search_preprocess"</span>: remove_punctuation,</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"search_postprocess"</span>: drop_duplicates,</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    },</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-33" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># you can see we've reused the vectoriser and hooks from before</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>reloaded_vector_store <span class="op">=</span> VectorStore.from_filespace(</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    folder_path<span class="op">=</span><span class="st">"./fake_soc_dataset/"</span>,  <span class="co"># YOU MAY NEED TO CHANGE THIS LINE TO THE CORRECT PATH</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    vectoriser<span class="op">=</span>vectoriser,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    hooks<span class="op">=</span>{</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"search_preprocess"</span>: remove_punctuation,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"search_postprocess"</span>: drop_duplicates,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can then continue to use the vectorstore as seem earlier</p>
-<div id="cell-38" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>reloaded_vector_store.search(input_data, n_results<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-35" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>reloaded_vector_store.search(input_data, n_results<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="injecting-data-into-our-classification-results-with-a-hook" class="level3">
@@ -776,64 +744,64 @@ This section describes how to install the packaged <strong>wheel</strong> from t
 <p>We may want to inject this extra information that’s not directly stored as metadata in the knowledgebase, so that a downstream component (such as a RAG agent) can use the additional information</p>
 <section id="but-we-also-want-keep-our-existing-hook-logic-that-removes-punctuation" class="level4">
 <h4 class="anchored" data-anchor-id="but-we-also-want-keep-our-existing-hook-logic-that-removes-punctuation">But we also want keep our existing hook logic that removes punctuation…</h4>
-<div id="cell-41" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>official_id_definitions <span class="op">=</span> {</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"101"</span>: <span class="st">"Fruit farmer: Grows and harvests fruits such as apples, oranges, and berries."</span>,</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"102"</span>: <span class="st">"dairy farmer: Manages cows for milk production and processes dairy products."</span>,</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"103"</span>: <span class="st">"construction laborer: Performs physical tasks on construction sites, such as digging and carrying materials."</span>,</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"104"</span>: <span class="st">"carpenter: Constructs, installs, and repairs wooden frameworks and structures."</span>,</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"105"</span>: <span class="st">"electrician: Installs, maintains, and repairs electrical systems in buildings and equipment."</span>,</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"106"</span>: <span class="st">"plumber: Installs and repairs water, gas, and drainage systems in homes and businesses."</span>,</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"107"</span>: <span class="st">"software developer: Designs, writes, and tests computer programs and applications."</span>,</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"108"</span>: <span class="st">"data analyst: Analyzes data to provide insights and support decision-making."</span>,</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"109"</span>: <span class="st">"accountant: Prepares and examines financial records, ensuring accuracy and compliance with regulations."</span>,</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"110"</span>: <span class="st">"teacher: Educates students in schools, colleges, or universities."</span>,</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"111"</span>: <span class="st">"nurse: Provides medical care and support to patients in hospitals, clinics, or homes."</span>,</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"112"</span>: <span class="st">"chef: Prepares and cooks meals in restaurants, hotels, or other food establishments."</span>,</span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"113"</span>: <span class="st">"graphic designer: Creates visual concepts for advertisements, websites, and branding."</span>,</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"114"</span>: <span class="st">"mechanic: Repairs and maintains vehicles and machinery."</span>,</span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"115"</span>: <span class="st">"photographer: Captures images for events, advertising, or artistic purposes."</span>,</span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-38" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>official_id_definitions <span class="op">=</span> {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"101"</span>: <span class="st">"Fruit farmer: Grows and harvests fruits such as apples, oranges, and berries."</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"102"</span>: <span class="st">"dairy farmer: Manages cows for milk production and processes dairy products."</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"103"</span>: <span class="st">"construction laborer: Performs physical tasks on construction sites, such as digging and carrying materials."</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"104"</span>: <span class="st">"carpenter: Constructs, installs, and repairs wooden frameworks and structures."</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"105"</span>: <span class="st">"electrician: Installs, maintains, and repairs electrical systems in buildings and equipment."</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"106"</span>: <span class="st">"plumber: Installs and repairs water, gas, and drainage systems in homes and businesses."</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"107"</span>: <span class="st">"software developer: Designs, writes, and tests computer programs and applications."</span>,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"108"</span>: <span class="st">"data analyst: Analyzes data to provide insights and support decision-making."</span>,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"109"</span>: <span class="st">"accountant: Prepares and examines financial records, ensuring accuracy and compliance with regulations."</span>,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"110"</span>: <span class="st">"teacher: Educates students in schools, colleges, or universities."</span>,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"111"</span>: <span class="st">"nurse: Provides medical care and support to patients in hospitals, clinics, or homes."</span>,</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"112"</span>: <span class="st">"chef: Prepares and cooks meals in restaurants, hotels, or other food establishments."</span>,</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"113"</span>: <span class="st">"graphic designer: Creates visual concepts for advertisements, websites, and branding."</span>,</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"114"</span>: <span class="st">"mechanic: Repairs and maintains vehicles and machinery."</span>,</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"115"</span>: <span class="st">"photographer: Captures images for events, advertising, or artistic purposes."</span>,</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-42" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_id_definitions(input_data: VectorStoreSearchOutput) <span class="op">-&gt;</span> VectorStoreSearchOutput:</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Map the 'doc_id' column to the corresponding definitions from the dictionary</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    input_data.loc[:, <span class="st">"id_definition"</span>] <span class="op">=</span> input_data[<span class="st">"doc_id"</span>].<span class="bu">map</span>(official_id_definitions)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> input_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-39" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_id_definitions(input_data: VectorStoreSearchOutput) <span class="op">-&gt;</span> VectorStoreSearchOutput:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Map the 'doc_id' column to the corresponding definitions from the dictionary</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    input_data.loc[:, <span class="st">"id_definition"</span>] <span class="op">=</span> input_data[<span class="st">"doc_id"</span>].<span class="bu">map</span>(official_id_definitions)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> input_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="we-can-now-combine-this-with-our-deduplicating-hook-in-a-new-function-that-runs-both" class="level4">
 <h4 class="anchored" data-anchor-id="we-can-now-combine-this-with-our-deduplicating-hook-in-a-new-function-that-runs-both">We can now combine this with our deduplicating hook in a new function that runs both</h4>
-<div id="cell-44" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_results(validated_input_object: VectorStoreSearchOutput) <span class="op">-&gt;</span> VectorStoreSearchOutput:</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># First, remove duplicates and reset rank</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    validated_input_object <span class="op">=</span> drop_duplicates_and_reset_rank(validated_input_object)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Then, add ID definitions</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    validated_input_object <span class="op">=</span> add_id_definitions(validated_input_object)</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return the final processed dataframe</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> validated_input_object</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-41" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_results(validated_input_object: VectorStoreSearchOutput) <span class="op">-&gt;</span> VectorStoreSearchOutput:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># First, remove duplicates and reset rank</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    validated_input_object <span class="op">=</span> drop_duplicates_and_reset_rank(validated_input_object)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Then, add ID definitions</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    validated_input_object <span class="op">=</span> add_id_definitions(validated_input_object)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return the final processed dataframe</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> validated_input_object</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="lets-once-again-update-the-postprocessing-hook-on-our-vectorstore" class="level4">
 <h4 class="anchored" data-anchor-id="lets-once-again-update-the-postprocessing-hook-on-our-vectorstore">lets once again update the postprocessing hook on our vectorstore</h4>
-<div id="cell-46" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks.hooks[<span class="st">"search_postprocess"</span>] <span class="op">=</span> process_results</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-43" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks.hooks[<span class="st">"search_postprocess"</span>] <span class="op">=</span> process_results</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="and-lets-try-the-search-again" class="level4">
 <h4 class="anchored" data-anchor-id="and-lets-try-the-search-again">and lets try the search again!</h4>
-<div id="cell-48" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>multi_input_data <span class="op">=</span> VectorStoreSearchInput(</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    {</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"id"</span>: [<span class="dv">1</span>, <span class="dv">2</span>],</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"query"</span>: [<span class="st">"a fruit and vegetable farmer!!!"</span>, <span class="st">"Digital marketing@"</span>],</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks.search(multi_input_data, n_results<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-45" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>multi_input_data <span class="op">=</span> VectorStoreSearchInput(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"id"</span>: [<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"query"</span>: [<span class="st">"a fruit and vegetable farmer!!!"</span>, <span class="st">"Digital marketing@"</span>],</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>my_vector_store_with_hooks.search(multi_input_data, n_results<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can see a few null values in that last output because our demo list of extra data wasn’t exhaustive, but where an ID does match our ‘official_id_definitions’ data we see the data being added correctly.</p>
 </section>

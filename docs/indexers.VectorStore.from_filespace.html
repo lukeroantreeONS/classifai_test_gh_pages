@@ -67,6 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../docs/indexers.dataclasses.html" rel="next">
 <link href="../docs/indexers.VectorStore.reverse_search.html" rel="prev">
+<link href="../ons_favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -353,13 +354,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/README.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Demo for <code>classifai</code></span></a>
+ <span class="menu-text">Overview of Demonstrations &amp; Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/general_workflow_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">✨ ClassifAI Demo ✨</span></a>
+ <span class="menu-text">✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -432,7 +433,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="even">
 <td>vectoriser</td>
 <td>object</td>
-<td>The vectoriser object used to transform text into vector embeddings.</td>
+<td>The <code>Vectoriser</code> object used to transform text into vector embeddings.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
@@ -468,8 +469,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table">
 <colgroup>
 <col style="width: 6%">
-<col style="width: 17%">
-<col style="width: 75%">
+<col style="width: 18%">
+<col style="width: 74%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -481,17 +482,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td></td>
-<td>DataValidationError</td>
+<td><code>DataValidationError</code></td>
 <td>If input arguments are invalid or if there are issues with the metadata or Parquet files.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>ConfigurationError</td>
-<td>If there are configuration issues, such as vectoriser mismatches.</td>
+<td><code>ConfigurationError</code></td>
+<td>If there are configuration issues, such as <code>Vectoriser</code> mismatches.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>IndexBuildError</td>
+<td><code>IndexBuildError</code></td>
 <td>If there are failures during loading or parsing the files.</td>
 </tr>
 </tbody>

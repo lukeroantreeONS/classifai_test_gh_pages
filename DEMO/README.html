@@ -67,6 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../DEMO/general_workflow_demo.html" rel="next">
 <link href="../docs/servers.make_endpoints.html" rel="prev">
+<link href="../ons_favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -149,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../DEMO/README.html">DEMO</a></li><li class="breadcrumb-item"><a href="../DEMO/README.html">Demo for <code>classifai</code></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../DEMO/README.html">DEMO</a></li><li class="breadcrumb-item"><a href="../DEMO/README.html">Overview of Demonstrations &amp; Examples</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -353,13 +354,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/README.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Demo for <code>classifai</code></span></a>
+ <span class="menu-text">Overview of Demonstrations &amp; Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/general_workflow_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">✨ ClassifAI Demo ✨</span></a>
+ <span class="menu-text">✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -386,29 +387,119 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#demo-for-classifai" id="toc-demo-for-classifai" class="nav-link active" data-scroll-target="#demo-for-classifai">Demo for <code>classifai</code></a>
+  <li><a href="#overview-of-demonstrations-examples" id="toc-overview-of-demonstrations-examples" class="nav-link active" data-scroll-target="#overview-of-demonstrations-examples">Overview of Demonstrations &amp; Examples</a>
   <ul class="collapse">
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
-  <li><a href="#running-the-demo" id="toc-running-the-demo" class="nav-link" data-scroll-target="#running-the-demo">Running the Demo</a></li>
   <li><a href="#notebooks-overview" id="toc-notebooks-overview" class="nav-link" data-scroll-target="#notebooks-overview">Notebooks Overview</a>
   <ul class="collapse">
-  <li><a href="#general_workflow_demo.ipynb" id="toc-general_workflow_demo.ipynb" class="nav-link" data-scroll-target="#general_workflow_demo.ipynb">1. <code>general_workflow_demo.ipynb</code></a></li>
-  <li><a href="#custom_vectoriser.ipynb" id="toc-custom_vectoriser.ipynb" class="nav-link" data-scroll-target="#custom_vectoriser.ipynb">2. <code>custom_vectoriser.ipynb</code></a></li>
-  <li><a href="#custom_preprocessing_and_postprocessing_hooks.ipynb" id="toc-custom_preprocessing_and_postprocessing_hooks.ipynb" class="nav-link" data-scroll-target="#custom_preprocessing_and_postprocessing_hooks.ipynb">3. <code>custom_preprocessing_and_postprocessing_hooks.ipynb</code></a></li>
+  <li><a href="#classifai-demo---introduction-basic-usage-general_workflow_demo.ipynb" id="toc-classifai-demo---introduction-basic-usage-general_workflow_demo.ipynb" class="nav-link" data-scroll-target="#classifai-demo---introduction-basic-usage-general_workflow_demo.ipynb">1. ✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨ : <code>general_workflow_demo.ipynb</code></a></li>
+  <li><a href="#creating-your-own-vectoriser-custom_vectoriser.ipynb" id="toc-creating-your-own-vectoriser-custom_vectoriser.ipynb" class="nav-link" data-scroll-target="#creating-your-own-vectoriser-custom_vectoriser.ipynb">2. Creating Your Own Vectoriser : <code>custom_vectoriser.ipynb</code></a></li>
+  <li><a href="#vectorstore-pre--and-post--processing-logic-with-hooks-custom_preprocessing_and_postprocessing_hooks.ipynb" id="toc-vectorstore-pre--and-post--processing-logic-with-hooks-custom_preprocessing_and_postprocessing_hooks.ipynb" class="nav-link" data-scroll-target="#vectorstore-pre--and-post--processing-logic-with-hooks-custom_preprocessing_and_postprocessing_hooks.ipynb">3. VectorStore pre- and post- processing logic with <em>Hooks</em> 🪝 : <code>custom_preprocessing_and_postprocessing_hooks.ipynb</code></a></li>
   </ul></li>
+  <li><a href="#installation-of-classifai" id="toc-installation-of-classifai" class="nav-link" data-scroll-target="#installation-of-classifai">Installation of classifai</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#running-the-demo" id="toc-running-the-demo" class="nav-link" data-scroll-target="#running-the-demo">Running the Demo</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../DEMO/README.html">DEMO</a></li><li class="breadcrumb-item"><a href="../DEMO/README.html">Demo for <code>classifai</code></a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../DEMO/README.html">DEMO</a></li><li class="breadcrumb-item"><a href="../DEMO/README.html">Overview of Demonstrations &amp; Examples</a></li></ol></nav></header>
 
 
 
 
-<section id="demo-for-classifai" class="level1">
-<h1>Demo for <code>classifai</code></h1>
+<section id="overview-of-demonstrations-examples" class="level1">
+<h1>Overview of Demonstrations &amp; Examples</h1>
 <p>This directory contains a set of Jupyter notebooks designed to help you understand and use <code>classifai</code> effectively.</p>
+<hr>
+<section id="notebooks-overview" class="level2">
+<h2 class="anchored" data-anchor-id="notebooks-overview">Notebooks Overview</h2>
+<p>This demo series includes several Jupyter notebooks:</p>
+<section id="classifai-demo---introduction-basic-usage-general_workflow_demo.ipynb" class="level3">
+<h3 class="anchored" data-anchor-id="classifai-demo---introduction-basic-usage-general_workflow_demo.ipynb">1. ✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨ : <code>general_workflow_demo.ipynb</code></h3>
+<p>This introduces the core features of <code>classifai</code>.</p>
+<p>It covers:</p>
+<ul>
+<li><p>Importing the package and its main components.</p></li>
+<li><p>Initialising a Vectoriser for converting text to vector representation.</p></li>
+<li><p>Creating a VectorStore - a database of labelled examples, and their vector representations, linked with a Vectoriser to allow supplied text to be searched against the vector database using cosine similarity to rank the labelled examples in order of semantic similarity.</p></li>
+<li><p>Creating a FastAPI server to expose the VectorStore’s functionality via a REST API.</p></li>
+</ul>
+<p>This notebook is intended for prospective users to get a quick overview of what the package can do, and as a ‘jumping off point’ for new projects.</p>
+</section>
+<section id="creating-your-own-vectoriser-custom_vectoriser.ipynb" class="level3">
+<h3 class="anchored" data-anchor-id="creating-your-own-vectoriser-custom_vectoriser.ipynb">2. Creating Your Own Vectoriser : <code>custom_vectoriser.ipynb</code></h3>
+<p>This notebook demonstrates how to create a new, custom Vectoriser by extending the base <code>VectoriserBase</code> class.</p>
+<p>It covers:</p>
+<ul>
+<li><p>Creating a new <code>OneHotVectoriser</code> class, extended from <code>VectoriserBase</code>.</p></li>
+<li><p>Setting up a VectorStore which uses the new Vectoriser.</p></li>
+</ul>
+<p>This notebook is for users who want to implement a vectorisation approach not covered by our existing suite of Vectorisers.</p>
+</section>
+<section id="vectorstore-pre--and-post--processing-logic-with-hooks-custom_preprocessing_and_postprocessing_hooks.ipynb" class="level3">
+<h3 class="anchored" data-anchor-id="vectorstore-pre--and-post--processing-logic-with-hooks-custom_preprocessing_and_postprocessing_hooks.ipynb">3. VectorStore pre- and post- processing logic with <em>Hooks</em> 🪝 : <code>custom_preprocessing_and_postprocessing_hooks.ipynb</code></h3>
+<p>This notebook demostrates how to add custom Python code logic to the VectorStore search pipeline, such as performing spell checking on user input, without breaking the data flow of the ClassifAI VectorStore.</p>
+<p>It covers:</p>
+<ul>
+<li><p>How the VectorStore handles input data and output data</p></li>
+<li><p>How to write ‘hooks’ - Python functions that can manipulate the input and output data of the different VectorStore methods</p></li>
+<li><p>How to ensure your hooks don’t break the dataflow by following the required input and output dataclasses</p></li>
+<li><p>Examples of different kinds of hooks that can be written - [spellchecking, deduplicating results, adding extra info to results based on result ids]</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="installation-of-classifai" class="level2">
+<h2 class="anchored" data-anchor-id="installation-of-classifai">Installation of classifai</h2>
+<section id="optional-create-and-activate-a-virtual-environment-from-the-command-line" class="level4">
+<h4 class="anchored" data-anchor-id="optional-create-and-activate-a-virtual-environment-from-the-command-line"><em>0)</em> [optional] Create and activate a virtual environment from the command line</h4>
+<section id="using-pip-venv" class="level5">
+<h5 class="anchored" data-anchor-id="using-pip-venv">Using pip + venv</h5>
+<p>Create a virtual environment:</p>
+<p><code>python -m venv .venv</code></p>
+</section>
+<section id="using-uv" class="level5">
+<h5 class="anchored" data-anchor-id="using-uv">Using UV</h5>
+<p>Create a virtual environment:</p>
+<p><code>uv venv</code></p>
+</section>
+<section id="activating-your-environment" class="level5">
+<h5 class="anchored" data-anchor-id="activating-your-environment">Activating your environment</h5>
+<p>(macOS / Linux):</p>
+<p><code>source .venv/bin/activate</code></p>
+<p>Activate it (Windows):</p>
+<p><code>source .venv/Scripts/activate</code></p>
+</section>
+</section>
+<section id="install-the-classifai-package" class="level4">
+<h4 class="anchored" data-anchor-id="install-the-classifai-package"><em>1)</em> Install the classifai package</h4>
+<section id="using-pip" class="level5">
+<h5 class="anchored" data-anchor-id="using-pip">Using pip</h5>
+<p><code>pip install "https://github.com/datasciencecampus/classifai/releases/download/v0.2.1/classifai-0.2.1-py3-none-any.whl"</code></p>
+</section>
+<section id="using-uv-1" class="level5">
+<h5 class="anchored" data-anchor-id="using-uv-1">Using uv</h5>
+<p>one-off:</p>
+<p><code>uv pip install "https://github.com/datasciencecampus/classifai/releases/download/v0.2.1/classifai-0.2.1-py3-none-any.whl"</code></p>
+<p>add as project dependency:</p>
+<p><code>uv add "https://github.com/datasciencecampus/classifai/releases/download/v0.2.1/classifai-0.2.1-py3-none-any.whl"</code></p>
+</section>
+</section>
+<section id="install-optional-dependencies" class="level4">
+<h4 class="anchored" data-anchor-id="install-optional-dependencies"><em>2)</em> Install optional dependencies</h4>
+<section id="using-pip-1" class="level5">
+<h5 class="anchored" data-anchor-id="using-pip-1">Using pip</h5>
+<p><code>pip install "classifai[&lt;dependency&gt;]"</code></p>
+<p>where <code>&lt;dependency&gt;</code> is one or more of <code>huggingface</code>,<code>gcp</code>,<code>ollama</code>, or <code>all</code> to install all of them. ##### Using uv</p>
+<p>one-off installation</p>
+<p><code>uv pip install "classifai[&lt;dependency&gt;]"</code></p>
+<p>add as project dependency</p>
+<p><code>uv add "classifai[&lt;dependency&gt;]"</code></p>
+<hr>
+</section>
+</section>
+</section>
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <p>You may wish to download each notebook individually and the demo dataset individually - each notebook contains specific installation instructions on how to set up an environemnt and download the package</p>
@@ -420,46 +511,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Or, if you prefer JupyterLab:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Then, open the notebooks in your browser. We recommend going through the the <code>general_workflow_demo.ipynb</code> notebook for a broad overview of the package before moving onto the <code>custom_vectoriser.ipynb</code> notebook, which covers a more advanced use-case.</p>
-</section>
-<section id="notebooks-overview" class="level2">
-<h2 class="anchored" data-anchor-id="notebooks-overview">Notebooks Overview</h2>
-<p>This demo includes two Jupyter notebooks:</p>
-<section id="general_workflow_demo.ipynb" class="level3">
-<h3 class="anchored" data-anchor-id="general_workflow_demo.ipynb">1. <code>general_workflow_demo.ipynb</code></h3>
-<p>This introduces the core features of <code>classifai</code>.</p>
-<p>It covers:</p>
-<ul>
-<li><p>Importing the package and its main components.</p></li>
-<li><p>Initialising a Vectoriser for converting text to vector representation.</p></li>
-<li><p>Creating a VectorStore - a database of labelled examples, and their vector representations, linked with a Vectoriser to allow supplied text to be searched against the vector database using cosine similarity to rank the labelled examples in order of semantic similarity.</p></li>
-<li><p>Creating a FastAPI server to expose the VectorStore’s functionality via a REST API.</p></li>
-</ul>
-<p>This notebook is intended for prospective users to get a quick overview of what the package can do, and as a ‘jumping off point’ for new projects.</p>
-</section>
-<section id="custom_vectoriser.ipynb" class="level3">
-<h3 class="anchored" data-anchor-id="custom_vectoriser.ipynb">2. <code>custom_vectoriser.ipynb</code></h3>
-<p>This notebook demonstrates how to create a new, custom Vectoriser by extending the base <code>VectoriserBase</code> class.</p>
-<p>It covers:</p>
-<ul>
-<li><p>Creating a new <code>OneHotVectoriser</code> class, extended from <code>VectoriserBase</code>.</p></li>
-<li><p>Setting up a VectorStore which uses the new Vectoriser.</p></li>
-</ul>
-<p>This notebook is for users who want to implement a vectorisation approach not covered by our existing suite of Vectorisers.</p>
-</section>
-<section id="custom_preprocessing_and_postprocessing_hooks.ipynb" class="level3">
-<h3 class="anchored" data-anchor-id="custom_preprocessing_and_postprocessing_hooks.ipynb">3. <code>custom_preprocessing_and_postprocessing_hooks.ipynb</code></h3>
-<p>This notebook demostrates how to add custom Python code logic to the VectorStore search pipeline, such as performing spell checking on user input, without breaking the data flow of the ClassifAI VectorStore.</p>
-<p>It covers:</p>
-<ul>
-<li><p>How the VectorStore handles input data and output data</p></li>
-<li><p>How to write ‘hooks’ - Python functions that can manipulate the input and output data of the different VectorStore methods</p></li>
-<li><p>How to ensure your hooks don’t break the dataflow by following the required input and output dataclasses</p></li>
-<li><p>Examples of different kinds of hooks that can be written - [spellchecking, deduplicating results, adding extra info to results based on result ids]</p></li>
-</ul>
-<hr>
 
 
-</section>
 </section>
 </section>
 
@@ -871,8 +924,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../DEMO/general_workflow_demo.html" class="pagination-link" aria-label="✨ ClassifAI Demo ✨">
-        <span class="nav-page-text">✨ ClassifAI Demo ✨</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../DEMO/general_workflow_demo.html" class="pagination-link" aria-label="✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨">
+        <span class="nav-page-text">✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

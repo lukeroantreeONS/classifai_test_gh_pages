@@ -67,6 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../docs/servers.make_endpoints.html" rel="next">
 <link href="../docs/servers.get_server.html" rel="prev">
+<link href="../ons_favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -353,13 +354,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/README.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Demo for <code>classifai</code></span></a>
+ <span class="menu-text">Overview of Demonstrations &amp; Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/general_workflow_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">✨ ClassifAI Demo ✨</span></a>
+ <span class="menu-text">✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -389,6 +390,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#classifai.servers.run_server" id="toc-classifai.servers.run_server" class="nav-link active" data-scroll-target="#classifai.servers.run_server">servers.run_server</a>
   <ul class="collapse">
   <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#raises" id="toc-raises" class="nav-link" data-scroll-target="#raises">Raises</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -402,7 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="classifai.servers.run_server" class="level1">
 <h1>servers.run_server</h1>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>servers.run_server(vector_stores, endpoint_names, port<span class="op">=</span><span class="dv">8000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Create and run a FastAPI server with search endpoints.</p>
+<p>Create and run a <code>FastAPI</code> server with search endpoints.</p>
 <section id="parameters" class="level2 doc-section doc-section-parameters">
 <h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="caption-top table">
@@ -424,13 +426,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>vector_stores</td>
 <td>list[VectorStore]</td>
-<td>A list of vector store objects, each responsible for handling embedding and search operations for a specific endpoint.</td>
+<td>A list of <code>VectorStore</code> objects, each responsible for handling embedding and search operations for a specific endpoint.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
 <td>endpoint_names</td>
 <td>list[str]</td>
-<td>A list of endpoint names corresponding to the vector stores.</td>
+<td>A list of endpoint names corresponding to the <code>VectorStore</code>s to be exposed.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
@@ -438,6 +440,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>int</td>
 <td>[optional] The port on which the API server will run. Defaults to 8000.</td>
 <td><code>8000</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="raises" class="level2 doc-section doc-section-raises">
+<h2 class="doc-section doc-section-raises anchored" data-anchor-id="raises">Raises</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 20%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><code>DataValidationError</code></td>
+<td>Raised if the input parameters are invalid, e.g.&nbsp;<code>port</code> value is out of bounds.</td>
 </tr>
 </tbody>
 </table>

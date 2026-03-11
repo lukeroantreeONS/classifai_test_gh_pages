@@ -65,6 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../ons_favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -351,13 +352,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/README.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Demo for <code>classifai</code></span></a>
+ <span class="menu-text">Overview of Demonstrations &amp; Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/general_workflow_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">✨ ClassifAI Demo ✨</span></a>
+ <span class="menu-text">✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -420,11 +421,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td><a href="#classifai.servers.main.get_router">get_router</a></td>
-<td>Create and return a FastAPI router with search endpoints.</td>
+<td>Create and return a <code>FastAPI.APIRouter</code> with search endpoints.</td>
 </tr>
 <tr class="even">
 <td><a href="#classifai.servers.main.get_server">get_server</a></td>
-<td>Create and return a FastAPI server with search endpoints.</td>
+<td>Create and return a <code>FastAPI</code> server with search endpoints.</td>
 </tr>
 <tr class="odd">
 <td><a href="#classifai.servers.main.make_endpoints">make_endpoints</a></td>
@@ -432,14 +433,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td><a href="#classifai.servers.main.run_server">run_server</a></td>
-<td>Create and run a FastAPI server with search endpoints.</td>
+<td>Create and run a <code>FastAPI</code> server with search endpoints.</td>
 </tr>
 </tbody>
 </table>
 <section id="classifai.servers.main.get_router" class="level3">
 <h3 class="anchored" data-anchor-id="classifai.servers.main.get_router">get_router</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>servers.main.get_router(vector_stores, endpoint_names)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Create and return a FastAPI router with search endpoints.</p>
+<p>Create and return a <code>FastAPI.APIRouter</code> with search endpoints.</p>
 <section id="parameters" class="level4 doc-section doc-section-parameters">
 <h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h4>
 <table class="caption-top table">
@@ -461,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>vector_stores</td>
 <td>list[VectorStore]</td>
-<td>A list of vector store objects, each responsible for handling embedding and search operations for a specific endpoint.</td>
+<td>A list of <code>VectorStore</code> objects, each responsible for handling embedding and search operations for a specific endpoint.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
@@ -485,7 +486,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>APIRouter</td>
+<td></td>
 <td>APIRouter</td>
 <td>Router with intialized search endpoints</td>
 </tr>
@@ -496,9 +497,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="doc-section doc-section-raises anchored" data-anchor-id="raises">Raises</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 27%">
-<col style="width: 62%">
+<col style="width: 8%">
+<col style="width: 25%">
+<col style="width: 65%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -510,13 +511,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td></td>
-<td>DataValidationError</td>
-<td>If the input parameters are invalid.</td>
+<td><code>DataValidationError</code></td>
+<td>Raised if the input parameters are invalid.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>ConfigurationError</td>
-<td>If a vector store is missing required methods.</td>
+<td><code>ConfigurationError</code></td>
+<td>Raised if one or more of the <code>vector_stores</code> are invalid.</td>
 </tr>
 </tbody>
 </table>
@@ -525,7 +526,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="classifai.servers.main.get_server" class="level3">
 <h3 class="anchored" data-anchor-id="classifai.servers.main.get_server">get_server</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>servers.main.get_server(vector_stores, endpoint_names)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Create and return a FastAPI server with search endpoints.</p>
+<p>Create and return a <code>FastAPI</code> server with search endpoints.</p>
 <section id="parameters-1" class="level4 doc-section doc-section-parameters">
 <h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-1">Parameters</h4>
 <table class="caption-top table">
@@ -547,13 +548,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>vector_stores</td>
 <td>list[VectorStore]</td>
-<td>A list of vector store objects, each responsible for handling embedding and search operations for a specific endpoint.</td>
+<td>A list of <code>VectorStore</code> objects, each responsible for handling embedding and search operations for a specific endpoint.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
 <td>endpoint_names</td>
 <td>list[str]</td>
-<td>A list of endpoint names corresponding to the vector stores.</td>
+<td>A list of endpoint names corresponding to the <code>VectorStore</code>s to be exposed.</td>
 <td><em>required</em></td>
 </tr>
 </tbody>
@@ -571,7 +572,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>FastAPI</td>
+<td></td>
 <td>FastAPI</td>
 <td>Server with intialized search endpoints</td>
 </tr>
@@ -620,7 +621,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="classifai.servers.main.run_server" class="level3">
 <h3 class="anchored" data-anchor-id="classifai.servers.main.run_server">run_server</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>servers.main.run_server(vector_stores, endpoint_names, port<span class="op">=</span><span class="dv">8000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Create and run a FastAPI server with search endpoints.</p>
+<p>Create and run a <code>FastAPI</code> server with search endpoints.</p>
 <section id="parameters-3" class="level4 doc-section doc-section-parameters">
 <h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-3">Parameters</h4>
 <table class="caption-top table">
@@ -642,13 +643,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>vector_stores</td>
 <td>list[VectorStore]</td>
-<td>A list of vector store objects, each responsible for handling embedding and search operations for a specific endpoint.</td>
+<td>A list of <code>VectorStore</code> objects, each responsible for handling embedding and search operations for a specific endpoint.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
 <td>endpoint_names</td>
 <td>list[str]</td>
-<td>A list of endpoint names corresponding to the vector stores.</td>
+<td>A list of endpoint names corresponding to the <code>VectorStore</code>s to be exposed.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
@@ -656,6 +657,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>int</td>
 <td>[optional] The port on which the API server will run. Defaults to 8000.</td>
 <td><code>8000</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="raises-1" class="level4 doc-section doc-section-raises">
+<h4 class="doc-section doc-section-raises anchored" data-anchor-id="raises-1">Raises</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 20%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><code>DataValidationError</code></td>
+<td>Raised if the input parameters are invalid, e.g.&nbsp;<code>port</code> value is out of bounds.</td>
 </tr>
 </tbody>
 </table>

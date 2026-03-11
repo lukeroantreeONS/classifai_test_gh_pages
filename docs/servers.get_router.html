@@ -67,6 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../docs/servers.get_server.html" rel="next">
 <link href="../docs/servers.html" rel="prev">
+<link href="../ons_favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -353,13 +354,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/README.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Demo for <code>classifai</code></span></a>
+ <span class="menu-text">Overview of Demonstrations &amp; Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/general_workflow_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">✨ ClassifAI Demo ✨</span></a>
+ <span class="menu-text">✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -404,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="classifai.servers.get_router" class="level1">
 <h1>servers.get_router</h1>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>servers.get_router(vector_stores, endpoint_names)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Create and return a FastAPI router with search endpoints.</p>
+<p>Create and return a <code>FastAPI.APIRouter</code> with search endpoints.</p>
 <section id="parameters" class="level2 doc-section doc-section-parameters">
 <h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="caption-top table">
@@ -426,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>vector_stores</td>
 <td>list[VectorStore]</td>
-<td>A list of vector store objects, each responsible for handling embedding and search operations for a specific endpoint.</td>
+<td>A list of <code>VectorStore</code> objects, each responsible for handling embedding and search operations for a specific endpoint.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
@@ -450,7 +451,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>APIRouter</td>
+<td></td>
 <td>APIRouter</td>
 <td>Router with intialized search endpoints</td>
 </tr>
@@ -461,9 +462,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="doc-section doc-section-raises anchored" data-anchor-id="raises">Raises</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 27%">
-<col style="width: 62%">
+<col style="width: 8%">
+<col style="width: 25%">
+<col style="width: 65%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -475,13 +476,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td></td>
-<td>DataValidationError</td>
-<td>If the input parameters are invalid.</td>
+<td><code>DataValidationError</code></td>
+<td>Raised if the input parameters are invalid.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>ConfigurationError</td>
-<td>If a vector store is missing required methods.</td>
+<td><code>ConfigurationError</code></td>
+<td>Raised if one or more of the <code>vector_stores</code> are invalid.</td>
 </tr>
 </tbody>
 </table>

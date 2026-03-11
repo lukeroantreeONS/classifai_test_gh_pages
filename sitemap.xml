@@ -2,138 +2,138 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/DEMO/README.html</loc>
-    <lastmod>2026-03-05T20:22:05.894Z</lastmod>
+    <lastmod>2026-03-11T16:17:42.131Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/DEMO/general_workflow_demo.html</loc>
-    <lastmod>2026-03-05T20:22:05.895Z</lastmod>
+    <lastmod>2026-03-11T16:17:42.133Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/DEMO/custom_preprocessing_and_postprocessing_hooks.html</loc>
-    <lastmod>2026-03-05T20:22:05.894Z</lastmod>
+    <lastmod>2026-03-11T16:17:42.132Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/vectorisers.ollama.OllamaVectoriser.html</loc>
-    <lastmod>2026-03-05T20:22:14.262Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.642Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/vectorisers.gcp.GcpVectoriser.html</loc>
-    <lastmod>2026-03-05T20:22:14.269Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.650Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/vectorisers.base.VectoriserBase.transform.html</loc>
-    <lastmod>2026-03-05T20:22:14.245Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.626Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/servers.run_server.html</loc>
-    <lastmod>2026-03-05T20:22:14.438Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.823Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/servers.make_endpoints.html</loc>
-    <lastmod>2026-03-05T20:22:14.441Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.826Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/servers.get_server.html</loc>
-    <lastmod>2026-03-05T20:22:14.435Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.820Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.html</loc>
-    <lastmod>2026-03-05T20:22:14.271Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.652Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.dataclasses.html</loc>
-    <lastmod>2026-03-05T20:22:14.357Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.740Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.dataclasses.VectorStoreSearchInput.html</loc>
-    <lastmod>2026-03-05T20:22:14.363Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.746Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.dataclasses.VectorStoreReverseSearchInput.html</loc>
-    <lastmod>2026-03-05T20:22:14.376Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.759Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.dataclasses.VectorStoreEmbedInput.html</loc>
-    <lastmod>2026-03-05T20:22:14.388Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.771Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.VectorStore.reverse_search.html</loc>
-    <lastmod>2026-03-05T20:22:14.407Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.791Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.VectorStore.from_filespace.html</loc>
-    <lastmod>2026-03-05T20:22:14.412Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.796Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/index.html</loc>
-    <lastmod>2026-03-05T20:22:14.217Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.598Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/index.html</loc>
-    <lastmod>2026-03-05T20:22:05.896Z</lastmod>
+    <lastmod>2026-03-11T16:17:42.134Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.VectorStore.embed.html</loc>
-    <lastmod>2026-03-05T20:22:14.398Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.781Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.VectorStore.html</loc>
-    <lastmod>2026-03-05T20:22:14.319Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.701Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.VectorStore.search.html</loc>
-    <lastmod>2026-03-05T20:22:14.402Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.786Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.dataclasses.VectorStoreEmbedOutput.html</loc>
-    <lastmod>2026-03-05T20:22:14.394Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.777Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.dataclasses.VectorStoreReverseSearchOutput.html</loc>
-    <lastmod>2026-03-05T20:22:14.382Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.765Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.dataclasses.VectorStoreSearchOutput.html</loc>
-    <lastmod>2026-03-05T20:22:14.370Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.753Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/indexers.main.html</loc>
-    <lastmod>2026-03-05T20:22:14.296Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.677Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/servers.get_router.html</loc>
-    <lastmod>2026-03-05T20:22:14.431Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.816Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/servers.main.html</loc>
-    <lastmod>2026-03-05T20:22:14.427Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.812Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/servers.html</loc>
-    <lastmod>2026-03-05T20:22:14.413Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.797Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/vectorisers.base.VectoriserBase.html</loc>
-    <lastmod>2026-03-05T20:22:14.243Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.624Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/vectorisers.base.html</loc>
-    <lastmod>2026-03-05T20:22:14.240Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.621Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/vectorisers.huggingface.HuggingFaceVectoriser.html</loc>
-    <lastmod>2026-03-05T20:22:14.255Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.636Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/docs/vectorisers.html</loc>
-    <lastmod>2026-03-05T20:22:14.235Z</lastmod>
+    <lastmod>2026-03-11T16:17:50.615Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/DEMO/custom_vectoriser.html</loc>
-    <lastmod>2026-03-05T20:22:05.894Z</lastmod>
+    <lastmod>2026-03-11T16:17:42.132Z</lastmod>
   </url>
   <url>
     <loc>https://lukeroantreeONS.github.io/classifai_test_gh_pages/README.html</loc>
-    <lastmod>2026-03-05T20:22:05.896Z</lastmod>
+    <lastmod>2026-03-11T16:17:42.133Z</lastmod>
   </url>
 </urlset>

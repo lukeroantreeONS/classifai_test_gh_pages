@@ -31,6 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../docs/vectorisers.html" rel="next">
+<link href="../ons_favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -317,13 +318,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/README.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Demo for <code>classifai</code></span></a>
+ <span class="menu-text">Overview of Demonstrations &amp; Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/general_workflow_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">✨ ClassifAI Demo ✨</span></a>
+ <span class="menu-text">✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -374,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td><a href="../docs/vectorisers.html#classifai.vectorisers">vectorisers</a></td>
-<td>This module provides classes for creating and utilizing embedding models from different services.</td>
+<td>This module provides classes for creating and utilizing embedding models from user-created solutions or</td>
 </tr>
 <tr class="even">
 <td><a href="../docs/vectorisers.base.html#classifai.vectorisers.base">vectorisers.base</a></td>
@@ -410,19 +411,19 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td><a href="../docs/indexers.html#classifai.indexers">indexers</a></td>
-<td>This module provides functionality for creating a vector index from a CSV (text)</td>
+<td>This module provides functionality for creating a <code>VectorStore</code> from a CSV (text)</td>
 </tr>
 <tr class="even">
 <td><a href="../docs/indexers.main.html#classifai.indexers.main">indexers.main</a></td>
-<td>This module provides functionality for creating a vector index from a text file.</td>
+<td>This module provides functionality for creating a <code>VectorStore</code> from a CSV (text)</td>
 </tr>
 <tr class="odd">
 <td><a href="../docs/indexers.VectorStore.html#classifai.indexers.VectorStore">indexers.VectorStore</a></td>
-<td>A class to model and create ‘VectorStore’ objects for building and searching vector databases from CSV text files.</td>
+<td>A class to model and create <code>VectorStore</code> objects for building and searching vector databases from CSV text files.</td>
 </tr>
 <tr class="even">
 <td><a href="../docs/indexers.dataclasses.html#classifai.indexers.dataclasses">indexers.dataclasses</a></td>
-<td></td>
+<td>This module defines dataclasses for structuring and validating input and output data for</td>
 </tr>
 <tr class="odd">
 <td><a href="../docs/indexers.dataclasses.VectorStoreSearchInput.html#classifai.indexers.dataclasses.VectorStoreSearchInput">indexers.dataclasses.VectorStoreSearchInput</a></td>
@@ -434,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td><a href="../docs/indexers.dataclasses.VectorStoreReverseSearchInput.html#classifai.indexers.dataclasses.VectorStoreReverseSearchInput">indexers.dataclasses.VectorStoreReverseSearchInput</a></td>
-<td>DataFrame-like object for forming and validating reverse search query</td>
+<td>DataFrame-like object for forming and validating reverse search query input data.</td>
 </tr>
 <tr class="even">
 <td><a href="../docs/indexers.dataclasses.VectorStoreReverseSearchOutput.html#classifai.indexers.dataclasses.VectorStoreReverseSearchOutput">indexers.dataclasses.VectorStoreReverseSearchOutput</a></td>
@@ -446,19 +447,19 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td><a href="../docs/indexers.dataclasses.VectorStoreEmbedOutput.html#classifai.indexers.dataclasses.VectorStoreEmbedOutput">indexers.dataclasses.VectorStoreEmbedOutput</a></td>
-<td>DataFrame-like object for storing and validating embedded vectors and associated</td>
+<td>DataFrame-like object for storing and validating embedded vectors and associated metadata.</td>
 </tr>
 <tr class="odd">
 <td><a href="../docs/indexers.VectorStore.embed.html#classifai.indexers.VectorStore.embed">indexers.VectorStore.embed</a></td>
-<td>Converts text into vector embeddings using the vectoriser and returns a VectorStoreEmbedOutput dataframe with columns ‘id’, ‘text’, and ‘embedding’.</td>
+<td>Converts text (provided via a <code>VectorStoreEmbedInput</code> object) into vector embeddings using the <code>Vectoriser</code> and</td>
 </tr>
 <tr class="even">
 <td><a href="../docs/indexers.VectorStore.search.html#classifai.indexers.VectorStore.search">indexers.VectorStore.search</a></td>
-<td>Searches the vector store using queries from a VectorStoreSearchInput object and returns</td>
+<td>Searches the <code>VectorStore</code> using queries from a <code>VectorStoreSearchInput</code> object and returns</td>
 </tr>
 <tr class="odd">
 <td><a href="../docs/indexers.VectorStore.reverse_search.html#classifai.indexers.VectorStore.reverse_search">indexers.VectorStore.reverse_search</a></td>
-<td>Reverse searches the vector store using a VectorStoreReverseSearchInput object</td>
+<td>Reverse searches the <code>VectorStore</code> using a <code>VectorStoreReverseSearchInput</code> object</td>
 </tr>
 <tr class="even">
 <td><a href="../docs/indexers.VectorStore.from_filespace.html#classifai.indexers.VectorStore.from_filespace">indexers.VectorStore.from_filespace</a></td>
@@ -482,15 +483,15 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td><a href="../docs/servers.get_router.html#classifai.servers.get_router">servers.get_router</a></td>
-<td>Create and return a FastAPI router with search endpoints.</td>
+<td>Create and return a <code>FastAPI.APIRouter</code> with search endpoints.</td>
 </tr>
 <tr class="even">
 <td><a href="../docs/servers.get_server.html#classifai.servers.get_server">servers.get_server</a></td>
-<td>Create and return a FastAPI server with search endpoints.</td>
+<td>Create and return a <code>FastAPI</code> server with search endpoints.</td>
 </tr>
 <tr class="odd">
 <td><a href="../docs/servers.run_server.html#classifai.servers.run_server">servers.run_server</a></td>
-<td>Create and run a FastAPI server with search endpoints.</td>
+<td>Create and run a <code>FastAPI</code> server with search endpoints.</td>
 </tr>
 <tr class="even">
 <td><a href="../docs/servers.make_endpoints.html#classifai.servers.make_endpoints">servers.make_endpoints</a></td>

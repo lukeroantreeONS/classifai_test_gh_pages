@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <link href="../docs/vectorisers.base.VectoriserBase.html" rel="next">
 <link href="../docs/index.html" rel="prev">
+<link href="../ons_favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -318,13 +319,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/README.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Demo for <code>classifai</code></span></a>
+ <span class="menu-text">Overview of Demonstrations &amp; Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/general_workflow_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">✨ ClassifAI Demo ✨</span></a>
+ <span class="menu-text">✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -354,6 +355,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#classifai.vectorisers" id="toc-classifai.vectorisers" class="nav-link active" data-scroll-target="#classifai.vectorisers">vectorisers</a></li>
   <li><a href="#vectoriser-overview" id="toc-vectoriser-overview" class="nav-link" data-scroll-target="#vectoriser-overview">Vectoriser Overview</a></li>
   <li><a href="#implemented-vectorisers" id="toc-implemented-vectorisers" class="nav-link" data-scroll-target="#implemented-vectorisers">Implemented Vectorisers</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
   </ul>
 </nav>
     </div>
@@ -366,7 +368,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="classifai.vectorisers" class="level1">
 <h1>vectorisers</h1>
 <p><code>vectorisers</code></p>
-<p>This module provides classes for creating and utilizing embedding models from different services. The Vectoriser module offers a unified interface to interact with various other ClassifAI Package Modules. Generally Vectorisers are used to convert text data into numerical embeddings that can be used for machine learning tasks.</p>
+<p>This module provides classes for creating and utilizing embedding models from user-created solutions or third-party services. The Vectoriser module offers a unified interface to interact with various other ClassifAI Package Modules. Generally Vectorisers are used to convert text data into numerical embeddings that can be used for machine learning tasks.</p>
 <section id="section" class="level27">
 <p class="heading"></p>
 </section>
@@ -376,7 +378,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="vectoriser-overview" class="level1">
 <h1>Vectoriser Overview</h1>
-<p>In our Package, Vectoriser have a simple role: - Take in text data (as a string or list of strings) - Output numerical embeddings (as a numpy array) - Each Vectortiser should provide a <code>transform</code> method to perform this conversion.</p>
+<p>In our Package, Vectoriser have a simple role:</p>
+<ul>
+<li>Take in text data (as a string or list of strings)</li>
+<li>Output numerical embeddings (as a numpy array)</li>
+<li>Each Vectortiser should provide a <code>transform</code> method to perform this conversion.</li>
+</ul>
 <p>It is possible for users to implement their own Vectoriser classes by inheriting from the <code>VectoriserBase</code> abstract base class and implementing the <code>transform</code> method.</p>
 <section id="section-2" class="level27">
 <p class="heading"></p>
@@ -387,13 +394,28 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="implemented-vectorisers" class="level1">
 <h1>Implemented Vectorisers</h1>
-<p>We provide several quick implementations of Vectorisers that interface with popular services and libraries.</p>
-<p>The module contains the following ‘ready-made’ classes: - <code>GcpVectoriser</code>: A class for embedding text using Google Cloud Platform’s GenAI API. - <code>HuggingFaceVectoriser</code>: A general wrapper class for Huggingface Transformers models to generate text embeddings. - <code>OllamaVectoriser</code>: A general wrapper class for using a locally running ollama server to generate text embeddings.</p>
+<p>We provide several robust implementations of Vectorisers that interface with popular services and libraries.</p>
+<p>The module contains the following ‘ready-made’ classes:</p>
+<ul>
+<li><code>GcpVectoriser</code>: A class for embedding text using Google Cloud Platform’s GenAI API.</li>
+<li><code>HuggingFaceVectoriser</code>: A general wrapper class for Huggingface Transformers models to generate text embeddings.</li>
+<li><code>OllamaVectoriser</code>: A general wrapper class for using a locally running ollama server to generate text embeddings.</li>
+</ul>
 <p>Each class is designed to interface with a specific service that provides embedding model functionality.</p>
 <p>The <code>GcpVectoriser</code> class leverages Google’s GenAI API,</p>
 <p>The <code>HuggingFaceVectoriser</code> class utilizes models from the Huggingface Transformers library.</p>
 <p>The <code>OllamaVectoriser</code> class can use any local/downloaded model which can be served by ollama.</p>
 <p>These classes abstract the underlying implementation details, providing a simple and consistent interface for embedding text using different services.</p>
+<section id="section-4" class="level27">
+<p class="heading"></p>
+</section>
+<section id="section-5" class="level27">
+<p class="heading"></p>
+</section>
+</section>
+<section id="further-reading" class="level1">
+<h1>Further Reading</h1>
+<p>The “Creating Your Own Vectoriser” demo (<code>DEMO/custom_vectoriser.ipynb</code>) notebook contains detailed instructions / examples on implementation of custom <code>Vectoriser</code>s, and using them to within <code>VectorStore</code> objects.</p>
 
 
 </section>

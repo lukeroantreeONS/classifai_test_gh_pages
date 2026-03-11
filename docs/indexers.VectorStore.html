@@ -67,6 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../docs/indexers.VectorStore.embed.html" rel="next">
 <link href="../docs/indexers.html" rel="prev">
+<link href="../ons_favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -353,13 +354,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/README.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Demo for <code>classifai</code></span></a>
+ <span class="menu-text">Overview of Demonstrations &amp; Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/general_workflow_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">✨ ClassifAI Demo ✨</span></a>
+ <span class="menu-text">✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -418,14 +419,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    overwrite<span class="op">=</span><span class="va">False</span>,</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    hooks<span class="op">=</span><span class="va">None</span>,</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A class to model and create ‘VectorStore’ objects for building and searching vector databases from CSV text files.</p>
+<p>A class to model and create <code>VectorStore</code> objects for building and searching vector databases from CSV text files.</p>
 <section id="attributes" class="level2 doc-section doc-section-attributes">
 <h2 class="doc-section doc-section-attributes anchored" data-anchor-id="attributes">Attributes</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 8%">
-<col style="width: 76%">
+<col style="width: 14%">
+<col style="width: 12%">
+<col style="width: 72%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -438,17 +439,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>file_name</td>
 <td>str</td>
-<td>the original file with the knowledgebase to build the vector store</td>
+<td>the data file contatining the knowledgebase to build the <code>VectorStore</code></td>
 </tr>
 <tr class="even">
 <td>data_type</td>
 <td>str</td>
-<td>the data type of the original file (curently only csv supported)</td>
+<td>the data type of the data file (curently only csv supported)</td>
 </tr>
 <tr class="odd">
 <td>vectoriser</td>
-<td>object</td>
-<td>A Vectoriser object from the corresponding ClassifAI Pacakge module</td>
+<td>VectoriserBase</td>
+<td>A <code>Vectoriser</code> object from the corresponding ClassifAI Pacakge module</td>
 </tr>
 <tr class="even">
 <td>batch_size</td>
@@ -463,12 +464,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="even">
 <td>output_dir</td>
 <td>str</td>
-<td>the path to the output directory where the VectorStore will be saved</td>
+<td>the path to the output directory where the <code>VectorStore</code> will be saved</td>
 </tr>
 <tr class="odd">
 <td>vectors</td>
 <td>np.array</td>
-<td>a numpy array of vectors for the vector DB</td>
+<td>a numpy array of vectors for the vector database</td>
 </tr>
 <tr class="even">
 <td>vector_shape</td>
@@ -478,12 +479,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>num_vectors</td>
 <td>int</td>
-<td>how many vectors are in the vector store</td>
+<td>the number of records saved in the <code>VectorStore</code></td>
 </tr>
 <tr class="even">
 <td>vectoriser_class</td>
 <td>str</td>
-<td>the type of vectoriser used to create embeddings</td>
+<td>the type of <code>Vectoriser</code> used to create embeddings</td>
 </tr>
 <tr class="odd">
 <td>hooks</td>
@@ -505,7 +506,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td><a href="#classifai.indexers.VectorStore.embed">embed</a></td>
-<td>Converts text into vector embeddings using the vectoriser and returns a VectorStoreEmbedOutput dataframe with columns ‘id’, ‘text’, and ‘embedding’.</td>
+<td>Converts text (provided via a <code>VectorStoreEmbedInput</code> object) into vector embeddings using the <code>Vectoriser</code> and</td>
 </tr>
 <tr class="even">
 <td><a href="#classifai.indexers.VectorStore.from_filespace">from_filespace</a></td>
@@ -513,25 +514,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td><a href="#classifai.indexers.VectorStore.reverse_search">reverse_search</a></td>
-<td>Reverse searches the vector store using a VectorStoreReverseSearchInput object</td>
+<td>Reverse searches the <code>VectorStore</code> using a <code>VectorStoreReverseSearchInput</code> object</td>
 </tr>
 <tr class="even">
 <td><a href="#classifai.indexers.VectorStore.search">search</a></td>
-<td>Searches the vector store using queries from a VectorStoreSearchInput object and returns</td>
+<td>Searches the <code>VectorStore</code> using queries from a <code>VectorStoreSearchInput</code> object and returns</td>
 </tr>
 </tbody>
 </table>
 <section id="classifai.indexers.VectorStore.embed" class="level3">
 <h3 class="anchored" data-anchor-id="classifai.indexers.VectorStore.embed">embed</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>indexers.VectorStore.embed(query)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Converts text into vector embeddings using the vectoriser and returns a VectorStoreEmbedOutput dataframe with columns ‘id’, ‘text’, and ‘embedding’.</p>
+<p>Converts text (provided via a <code>VectorStoreEmbedInput</code> object) into vector embeddings using the <code>Vectoriser</code> and returns a <code>VectorStoreEmbedOutput</code> dataframe with columns <code>id</code>, <code>text</code>, and <code>embedding</code>.</p>
 <section id="parameters" class="level4 doc-section doc-section-parameters">
 <h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h4>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 6%">
 <col style="width: 17%">
-<col style="width: 66%">
+<col style="width: 67%">
 <col style="width: 9%">
 </colgroup>
 <thead>
@@ -546,7 +547,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>query</td>
 <td>VectorStoreEmbedInput</td>
-<td>The VectorStoreEmbedInput object containing the strings to be embedded and their ids.</td>
+<td>The <code>VectorStoreEmbedInput</code> object containing the strings to be embedded and their ids.</td>
 <td><em>required</em></td>
 </tr>
 </tbody>
@@ -556,9 +557,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h4>
 <table class="caption-top table">
 <colgroup>
+<col style="width: 5%">
 <col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 65%">
+<col style="width: 77%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -569,9 +570,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
+<td></td>
 <td>VectorStoreEmbedOutput</td>
-<td>VectorStoreEmbedOutput</td>
-<td>The output object containing the embeddings along with their corresponding ids and texts.</td>
+<td>The <code>VectorStoreEmbedOutput</code> object containing the embeddings along with their corresponding ids and texts.</td>
 </tr>
 </tbody>
 </table>
@@ -581,8 +582,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table">
 <colgroup>
 <col style="width: 11%">
-<col style="width: 30%">
-<col style="width: 58%">
+<col style="width: 31%">
+<col style="width: 56%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -594,17 +595,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td></td>
-<td>DataValidationError</td>
+<td><code>DataValidationError</code></td>
 <td>Raised if invalid arguments are passed.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>HookError</td>
+<td><code>HookError</code></td>
 <td>Raised if user-defined hooks fail.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>ClassifaiError</td>
+<td><code>ClassifaiError</code></td>
 <td>Raised if embedding operation fails.</td>
 </tr>
 </tbody>
@@ -642,7 +643,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="even">
 <td>vectoriser</td>
 <td>object</td>
-<td>The vectoriser object used to transform text into vector embeddings.</td>
+<td>The <code>Vectoriser</code> object used to transform text into vector embeddings.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
@@ -678,8 +679,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table">
 <colgroup>
 <col style="width: 6%">
-<col style="width: 17%">
-<col style="width: 75%">
+<col style="width: 18%">
+<col style="width: 74%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -691,17 +692,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td></td>
-<td>DataValidationError</td>
+<td><code>DataValidationError</code></td>
 <td>If input arguments are invalid or if there are issues with the metadata or Parquet files.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>ConfigurationError</td>
-<td>If there are configuration issues, such as vectoriser mismatches.</td>
+<td><code>ConfigurationError</code></td>
+<td>If there are configuration issues, such as <code>Vectoriser</code> mismatches.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>IndexBuildError</td>
+<td><code>IndexBuildError</code></td>
 <td>If there are failures during loading or parsing the files.</td>
 </tr>
 </tbody>
@@ -715,14 +716,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    max_n_results<span class="op">=</span><span class="dv">100</span>,</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    partial_match<span class="op">=</span><span class="va">False</span>,</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Reverse searches the vector store using a VectorStoreReverseSearchInput object and returns matched results in VectorStoreReverseSearchOutput object. If using partial matching, matches if document label starts with query label.</p>
+<p>Reverse searches the <code>VectorStore</code> using a <code>VectorStoreReverseSearchInput</code> object and returns matched results in <code>VectorStoreReverseSearchOutput</code> object. If using partial matching, matches if document label starts with query label.</p>
 <section id="parameters-2" class="level4 doc-section doc-section-parameters">
 <h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-2">Parameters</h4>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 7%">
-<col style="width: 16%">
-<col style="width: 69%">
+<col style="width: 15%">
+<col style="width: 70%">
 <col style="width: 6%">
 </colgroup>
 <thead>
@@ -737,19 +738,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>query</td>
 <td>VectorStoreReverseSearchInput</td>
-<td>A VectorStoreReverseSearchInput object containing the text query or list of queries to search for with ids.</td>
+<td>A <code>VectorStoreReverseSearchInput</code> object containing the text query or list of queries to search for with ids.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
 <td>max_n_results</td>
 <td>int</td>
-<td>[optional] Number of top results to return for each query, set to -1 to return all results. Default 100.</td>
+<td>[optional] Number of top results to return for each query, set to -1 to return all results. Defaults to 100.</td>
 <td><code>100</code></td>
 </tr>
 <tr class="odd">
 <td>partial_match</td>
 <td>bool</td>
-<td>[optional] Set the search behaviour to use <code>join_where</code> to match query checks that document id <code>startsWith</code> query. Default False</td>
+<td>[optional] If <code>True</code>, the search behaviour is set to return results where the <code>document_id</code> is prefixed by the query. Defaults to <code>False</code>.</td>
 <td><code>False</code></td>
 </tr>
 </tbody>
@@ -759,9 +760,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="doc-section doc-section-returns anchored" data-anchor-id="returns-2">Returns</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 4%">
+<col style="width: 3%">
 <col style="width: 14%">
-<col style="width: 80%">
+<col style="width: 82%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -772,9 +773,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>result_df</td>
+<td></td>
 <td>VectorStoreReverseSearchOutput</td>
-<td>A VectorStoreReverseSearchOutput object containing reverse search results with columns for query ID, query text, document ID, document text and any associated metadata columns.</td>
+<td>A <code>VectorStoreReverseSearchOutput</code> object containing reverse search results with columns for <code>query_id</code>, <code>query_text</code>, <code>document_id</code>, <code>document_text</code> and any associated metadata columns.</td>
 </tr>
 </tbody>
 </table>
@@ -783,9 +784,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="doc-section doc-section-raises anchored" data-anchor-id="raises-2">Raises</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 29%">
-<col style="width: 59%">
+<col style="width: 10%">
+<col style="width: 31%">
+<col style="width: 58%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -797,17 +798,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td></td>
-<td>DataValidationError</td>
+<td><code>DataValidationError</code></td>
 <td>Raised if invalid arguments are passed.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>HookError</td>
+<td><code>HookError</code></td>
 <td>Raised if user-defined hooks fail.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>ClassifaiError</td>
+<td><code>ClassifaiError</code></td>
 <td>Raised if reverse search operation fails.</td>
 </tr>
 </tbody>
@@ -817,7 +818,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="classifai.indexers.VectorStore.search" class="level3">
 <h3 class="anchored" data-anchor-id="classifai.indexers.VectorStore.search">search</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>indexers.VectorStore.search(query, n_results<span class="op">=</span><span class="dv">10</span>, batch_size<span class="op">=</span><span class="dv">8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Searches the vector store using queries from a VectorStoreSearchInput object and returns ranked results in VectorStoreSearchOutput object. In batches, converts users text queries into vector embeddings, computes cosine similarity with stored document vectors, and retrieves the top results.</p>
+<p>Searches the <code>VectorStore</code> using queries from a <code>VectorStoreSearchInput</code> object and returns ranked results in <code>VectorStoreSearchOutput</code> object. In batches, converts users text queries into vector embeddings, computes cosine similarity with stored document vectors, and retrieves the top results.</p>
 <section id="parameters-3" class="level4 doc-section doc-section-parameters">
 <h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-3">Parameters</h4>
 <table class="caption-top table">
@@ -839,7 +840,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>query</td>
 <td>VectorStoreSearchInput</td>
-<td>A VectoreStoreSearchInput object containing the text query or list of queries to search for with ids.</td>
+<td>A <code>VectorStoreSearchInput</code> object containing the text query or list of queries to search for with ids.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
@@ -861,9 +862,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="doc-section doc-section-returns anchored" data-anchor-id="returns-3">Returns</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
+<col style="width: 3%">
 <col style="width: 11%">
-<col style="width: 83%">
+<col style="width: 85%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -874,9 +875,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>result_df</td>
+<td></td>
 <td>VectorStoreSearchOutput</td>
-<td>A VectorStoreSearchOutput object containing search results with columns for query ID, query text, document ID, document text, rank, score, and any associated metadata columns.</td>
+<td>A <code>VectorStoreSearchOutput</code> object containing search results with columns for <code>query_id</code>, <code>query_text</code>, <code>document_id</code>, <code>document_text</code>, <code>rank</code>, <code>score</code>, and any associated metadata columns.</td>
 </tr>
 </tbody>
 </table>
@@ -886,8 +887,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table">
 <colgroup>
 <col style="width: 10%">
-<col style="width: 27%">
-<col style="width: 62%">
+<col style="width: 29%">
+<col style="width: 60%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -899,22 +900,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td></td>
-<td>DataValidationError</td>
+<td><code>DataValidationError</code></td>
 <td>Raised if invalid arguments are passed.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>ConfigurationError</td>
+<td><code>ConfigurationError</code></td>
 <td>Raised if the vector store is not initialized.</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>HookError</td>
+<td><code>HookError</code></td>
 <td>Raised if user-defined hooks fail.</td>
 </tr>
 <tr class="even">
 <td></td>
-<td>VectorisationError</td>
+<td><code>VectorisationError</code></td>
 <td>Raised if embedding queries fails.</td>
 </tr>
 </tbody>

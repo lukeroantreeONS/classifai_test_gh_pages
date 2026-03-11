@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <link href="../docs/indexers.VectorStore.html" rel="next">
 <link href="../docs/vectorisers.gcp.GcpVectoriser.html" rel="prev">
+<link href="../ons_favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -318,13 +319,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/README.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Demo for <code>classifai</code></span></a>
+ <span class="menu-text">Overview of Demonstrations &amp; Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../DEMO/general_workflow_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">✨ ClassifAI Demo ✨</span></a>
+ <span class="menu-text">✨ ClassifAI Demo - Introduction &amp; Basic Usage ✨</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -364,10 +365,28 @@ ul.task-list li input[type="checkbox"] {
 <section id="classifai.indexers" class="level1">
 <h1>indexers</h1>
 <p><code>indexers</code></p>
-<p>This module provides functionality for creating a vector index from a CSV (text) file. It defines the <code>VectorStore</code> class, which is used to model and create vector databases from CSV text files using a vectoriser object.</p>
-<p>This class requires a Vectoriser object from the vectorisers submodule, to convert the CSV’s text data into vector embeddings which are then stored in the VectorStore objects.</p>
-<p>Key Features: - Batch processing of input files to handle large datasets. - Support for CSV file format (additional formats may be added in future updates). - Integration with a custom embedder for generating vector embeddings. - Logging for tracking progress and handling errors during processing.</p>
-<p>VectorStore Class: - The <code>VectorStore</code> class is initialized with a vectoriser object and a CSV knowledgebase. - Additional columns in the CSV may be specified as metadata to be included in the vector database. - Upon creation, the VectorStore is saved in parquet format for efficient, and quick reloading via the VectorStore’s <code>.from_filespace()</code> method. - A new piece of text data (or label) can be queried against the VectorStore in the following ways: - <code>.search()</code>: to find the most semantically similar pieces of text in the vector database. - <code>.reverse_search()</code>: to find all examples in the knowledgebase that have a given label. - <code>.embed()</code>: to generate a vector embedding for a given piece of text data. - ‘Hook’ methods may be specified to perform pre-processing on input data before embedding, and post-processing on the output of the search methods.</p>
+<p>This module provides functionality for creating a <code>VectorStore</code> from a CSV (text) file. It defines the <code>VectorStore</code> class, which is used to model and create vector databases from CSV text files using a <code>Vectoriser</code> object.</p>
+<p>This class requires a <code>Vectoriser</code> object from the vectorisers submodule, to convert the CSV’s text data into vector embeddings which are then stored in the <code>VectorStore</code> objects.</p>
+<p>Key Features:</p>
+<ul>
+<li>Batch processing of input files to handle large datasets.</li>
+<li>Support for CSV file format (additional formats may be added in future updates).</li>
+<li>Integration with a custom embedder for generating vector embeddings.</li>
+<li>Logging for tracking progress and handling errors during processing.</li>
+</ul>
+<p>VectorStore Class:</p>
+<ul>
+<li>The <code>VectorStore</code> class is initialized with a <code>Vectoriser</code> object and a CSV knowledgebase.</li>
+<li>Additional columns in the CSV may be specified as metadata to be included in the vector database.</li>
+<li>Upon creation, the <code>VectorStore</code> is saved in parquet format for efficient, and quick reloading via the <code>VectorStore</code>’s <code>.from_filespace()</code> method.</li>
+<li>A new piece of text data (or label) can be queried against the <code>VectorStore</code> in the following ways:
+<ul>
+<li><code>.search()</code>: to find the most semantically similar pieces of text in the vector database.</li>
+<li><code>.reverse_search()</code>: to find all examples in the knowledgebase that have a given label.</li>
+<li><code>.embed()</code>: to generate a vector embedding for a given piece of text data.</li>
+</ul></li>
+<li>‘Hook’ methods may be specified to perform pre-processing on input data before embedding, and post-processing on the output of the search methods.</li>
+</ul>
 
 
 </section>
