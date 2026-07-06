@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.4.0](https://github.com/lukeroantreeONS/classifai_test_gh_pages/compare/v0.3.0...v0.4.0) (2026-07-06)
+
+
+### Features
+
+* **ci:** Add whl building and manifest config to release-please action ([#4](https://github.com/lukeroantreeONS/classifai_test_gh_pages/issues/4)) ([2ad1865](https://github.com/lukeroantreeONS/classifai_test_gh_pages/commit/2ad186553aa818d1994c1b077bb5e0cb2601e959))
+
 ## [0.3.0](https://github.com/lukeroantreeONS/classifai_test_gh_pages/compare/v0.2.1...v0.3.0) (2026-07-03)
 
 
